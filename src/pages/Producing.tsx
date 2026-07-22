@@ -103,7 +103,7 @@ export const Producing: React.FC = () => {
                     <span className="text-[#75716B] font-light">{project.category}</span>
                   </div>
 
-                  <h2 className="font-serif text-2xl md:text-[28px] text-[#2B2927] leading-snug">
+                  <h2 className=" text-xl md:text-2xl text-[#2B2927] leading-snug">
                     <a
                       href={project.link}
                       target="_blank"

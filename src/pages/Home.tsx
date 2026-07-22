@@ -7,27 +7,25 @@ export const Home: React.FC = () => {
     {
       title: 'Directing',
       subtitle: 'Hybrid Documentaries & Interactive Work',
-      description: 'Short film projects including "Like Nothing Ever Happened" and the interactive installation "This Isn’t Violence".',
       link: '/directing',
     },
     {
       title: 'Film Programming',
       subtitle: 'Barbican & Festival Curatorial Work',
-      description: 'Curating retrospective film seasons and Eastern European cinema series for Barbican Centre and international festivals.',
       link: '/film-programming',
     },
     {
       title: 'Journalism',
       subtitle: 'Video Reporting & Features',
-      description: 'In-depth reporting and documentary features published across international outlets including Deutsche Welle.',
       link: '/journalism',
     },
+    /*
     {
       title: 'Producing & planet.a',
       subtitle: 'Independent Non-Fiction & Visual Hub',
-      description: 'Co-producing non-fiction projects and creative visual storytelling built on collaborative filmmaking.',
       link: '/producing',
     }
+    */
   ];
 
   return (
@@ -52,8 +50,8 @@ export const Home: React.FC = () => {
             Filmmaker & Curator &bull; London & Sofia
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B2927] font-normal leading-[1.2]">
-            Filmmaker, curator, and video journalist based between <span className="italic font-serif text-[#A88B68]">London</span> and <span className="italic font-serif text-[#A88B68]">Sofia</span>.
+          <h1 className=" text-xl sm:text-2xl lg:text-4xl text-[#2B2927] font-normal leading-[1.2]">
+            Filmmaker, curator, and video journalist based between <span className="italic  text-[#A88B68]">London</span> and <span className="italic  text-[#A88B68]">Sofia</span>.
           </h1>
 
           <div className="pt-2 flex items-center space-x-6 text-xs uppercase tracking-widest text-[#75716B]">
@@ -78,24 +76,18 @@ export const Home: React.FC = () => {
             <Link
               key={idx}
               to={item.link}
-              className="group py-6 flex flex-col md:flex-row md:items-baseline justify-between gap-4 transition-opacity duration-300 hover:opacity-75"
+              className="group py-5 flex flex-row items-center justify-between gap-4 transition-opacity duration-300 hover:opacity-75"
             >
-              <div className="md:w-1/3">
-                <h2 className="font-serif text-2xl sm:text-3xl text-[#2B2927] group-hover:text-[#A88B68] transition-colors">
+              <div>
+                <h2 className="text-xl sm:text-2xl text-[#2B2927] group-hover:text-[#A88B68] transition-colors">
                   {item.title}
                 </h2>
-                <span className="text-xs text-[#A88B68] font-light tracking-wide block mt-1">
+                <span className="text-xs text-[#A88B68] font-light tracking-wide block mt-0.5">
                   {item.subtitle}
                 </span>
               </div>
 
-              <div className="md:w-1/2">
-                <p className="text-sm text-[#75716B] font-light leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-
-              <div className="md:w-auto text-xs uppercase tracking-widest text-[#2B2927] flex items-center pt-2 md:pt-0">
+              <div className="text-xs uppercase tracking-widest text-[#2B2927] flex items-center shrink-0">
                 <span>View &rarr;</span>
               </div>
             </Link>

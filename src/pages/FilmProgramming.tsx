@@ -75,7 +75,7 @@ export const FilmProgramming: React.FC = () => {
                   )}
                 </div>
 
-                <h2 className="font-serif text-2xl md:text-[28px] text-[#2B2927] leading-snug">
+                <h2 className=" text-xl md:text-2xl text-[#2B2927] leading-snug">
                   <a
                     href={item.link}
                     target="_blank"
@@ -116,7 +116,7 @@ export const FilmProgramming: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
           <div>
-            <h3 className="font-serif text-xl text-[#2B2927]">
+            <h3 className=" text-xl text-[#2B2927]">
               <a 
                 href="https://www.cambridgefilmfestival.org.uk/" 
                 target="_blank" 
@@ -130,7 +130,7 @@ export const FilmProgramming: React.FC = () => {
             <div className="text-xs text-[#75716B] font-light mt-0.5">Film Programmer &bull; Since 2024</div>
           </div>
           <div>
-            <h3 className="font-serif text-xl text-[#2B2927]">
+            <h3 className=" text-xl text-[#2B2927]">
               <a 
                 href="https://www.sheffdocfest.com/" 
                 target="_blank" 

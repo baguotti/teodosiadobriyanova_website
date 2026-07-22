@@ -33,10 +33,10 @@ export const Directing: React.FC = () => {
           <div className="text-xs uppercase tracking-[0.2em] text-[#A88B68] font-normal">
             In Development
           </div>
-          <h2 className="font-serif text-3xl text-[#2B2927]">
-            Сякаш не се е случвало <span className="italic text-2xl text-[#75716B]">(Like Nothing Ever Happened)</span>
+          <h2 className=" text-2xl text-[#2B2927]">
+            Сякаш не се е случвало <span className="italic text-xl text-[#75716B]">(Like Nothing Ever Happened)</span>
           </h2>
-          <div className="text-xs text-[#75716B] font-light uppercase tracking-wider">
+          <div className="text-xs text-[#75716B] font-light tracking-wide">
             Short Hybrid Documentary
           </div>
         </div>
@@ -58,7 +58,7 @@ export const Directing: React.FC = () => {
           <div className="text-xs uppercase tracking-[0.2em] text-[#A88B68] font-normal">
             Interactive Installation &mdash; 2023
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#2B2927]">
+          <h2 className=" text-2xl sm:text-2xl text-[#2B2927]">
             <a
               href="https://www.instagram.com/tova.ne.e.nasilie/"
               target="_blank"
@@ -66,7 +66,7 @@ export const Directing: React.FC = () => {
               className="hover:text-[#A88B68] transition-colors inline-flex items-baseline group"
             >
               <span>Това не е насилие</span>
-              <span className="italic text-2xl text-[#75716B] group-hover:text-[#A88B68] transition-colors ml-2">(This Isn’t Violence)</span>
+              <span className="italic text-xl text-[#75716B] group-hover:text-[#A88B68] transition-colors ml-2">(This Isn’t Violence)</span>
               <ArrowUpRight size={18} className="ml-1.5 inline-block text-[#A88B68] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </h2>
@@ -102,7 +102,7 @@ export const Directing: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {stories.map((s, idx) => (
               <div key={idx} className="space-y-1">
-                <div className="font-serif text-lg text-[#2B2927]">{s.title}</div>
+                <div className=" text-lg text-[#2B2927]">{s.title}</div>
                 <div className="text-xs text-[#75716B] font-light">{s.author}</div>
               </div>
             ))}

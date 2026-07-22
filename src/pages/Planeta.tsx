@@ -13,7 +13,7 @@ export const Planeta: React.FC = () => {
       <div className="space-y-12">
         <section className="space-y-6 max-w-3xl">
           <div className="space-y-6">
-            <p className="font-serif text-xl sm:text-2xl text-[#2B2927] leading-relaxed font-normal">
+            <p className=" text-xl sm:text-2xl text-[#2B2927] leading-relaxed font-normal">
               I am the founder of <span className="italic">planet.a</span> &mdash; an online community dedicated to communicating the climate crisis in a simple and accessible way to Bulgarian audiences.
             </p>
             <p className="text-base text-[#75716B] font-light leading-relaxed">

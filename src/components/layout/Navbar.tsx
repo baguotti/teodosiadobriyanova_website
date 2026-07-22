@@ -10,8 +10,8 @@ export const Navbar: React.FC = () => {
     { name: 'Directing', path: '/directing' },
     { name: 'Film Programming', path: '/film-programming' },
     { name: 'Journalism', path: '/journalism' },
-    { name: 'Producing', path: '/producing' },
-    { name: 'planet.a', path: '/planeta' },
+    // { name: 'Producing', path: '/producing' },
+    // { name: 'planet.a', path: '/planeta' },
   ];
 
   return (
@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
           className="group transition-opacity duration-300 hover:opacity-75"
           onClick={() => setIsOpen(false)}
         >
-          <span className="font-serif text-2xl sm:text-3xl text-[#2B2927] font-normal tracking-tight block">
+          <span className=" text-2xl sm:text-3xl text-[#2B2927] font-normal tracking-tight block">
             Teodosia Dobriyanova
           </span>
         </NavLink>

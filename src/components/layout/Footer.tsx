@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
         
         {/* Left */}
         <div className="space-y-1">
-          <div className="font-serif text-lg text-[#2B2927] font-normal">
+          <div className=" text-lg text-[#2B2927] font-normal">
             Teodosia Dobriyanova
           </div>
           <div>London &bull; Sofia</div>

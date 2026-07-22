@@ -30,7 +30,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({ children, title, subti
             </span>
           )}
           {title && (
-            <h1 className="font-serif text-3xl sm:text-5xl text-[#2B2927] font-normal leading-tight">
+            <h1 className="text-2xl sm:text-4xl text-[#2B2927] font-normal leading-tight">
               {title}
             </h1>
           )}

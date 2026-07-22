@@ -148,13 +148,6 @@ export const Journalism: React.FC = () => {
       articleUrl: 'https://mashable.com/article/ukraine-russia-censorship-torrents-of-truth'
     },
     {
-      title: 'On Indigenous Dispossession and Resource Extraction',
-      outlet: 'Journalism Feature',
-      date: '2022',
-      description: '“That’s the first thing you feel when you step your foot there. ‘We are coming to take you away.’ Because there are diamond mines there, there’s petrol, and it’s full of natural resources. The greedy people want those resources. Step by step, they come in, they make those buildings where they accommodate you, and they take everything away from you. That’s what happens to minorities all around the world.”',
-      articleUrl: '#'
-    },
-    {
       title: '“Sound Can Bombard You, Music Is Manipulative”: Director Alexander Markov on Red Africa',
       outlet: 'New East Cinema',
       date: '2022',
@@ -195,7 +188,7 @@ export const Journalism: React.FC = () => {
               <div
                 key={idx}
                 onClick={() => toggleVideo(idx)}
-                className="py-3.5 px-3 -mx-3 rounded-md cursor-pointer hover:bg-[#F0ECE1]/30 transition-colors duration-150 group"
+                className="py-2 px-3 -mx-3 rounded-md cursor-pointer hover:bg-[#F0ECE1]/30 transition-colors duration-150 group"
               >
                 {/* Compact Header Row */}
                 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4">
@@ -205,7 +198,7 @@ export const Journalism: React.FC = () => {
                   </div>
 
                   <div className="md:w-8/12 flex items-baseline justify-between gap-3">
-                    <h2 className="font-serif text-lg md:text-xl text-[#2B2927] group-hover:text-[#A88B68] transition-colors leading-snug">
+                    <h2 className="text-base md:text-lg text-[#2B2927] group-hover:text-[#A88B68] transition-colors leading-snug">
                       {item.title}
                     </h2>
                   </div>
@@ -263,7 +256,7 @@ export const Journalism: React.FC = () => {
               <div
                 key={idx}
                 onClick={() => toggleArticle(idx)}
-                className="py-3.5 px-3 -mx-3 rounded-md cursor-pointer hover:bg-[#F0ECE1]/30 transition-colors duration-150 group"
+                className="py-2 px-3 -mx-3 rounded-md cursor-pointer hover:bg-[#F0ECE1]/30 transition-colors duration-150 group"
               >
                 {/* Compact Header Row */}
                 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4">
@@ -273,7 +266,7 @@ export const Journalism: React.FC = () => {
                   </div>
 
                   <div className="md:w-8/12 flex items-baseline justify-between gap-3">
-                    <h3 className="font-serif text-lg md:text-xl text-[#2B2927] group-hover:text-[#A88B68] transition-colors leading-snug">
+                    <h3 className="text-base md:text-lg text-[#2B2927] group-hover:text-[#A88B68] transition-colors leading-snug">
                       {article.title}
                     </h3>
                   </div>
