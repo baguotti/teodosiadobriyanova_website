@@ -16,7 +16,7 @@ export const FilmProgramming: React.FC = () => {
     {
       title: 'New East Cinema',
       venue: 'Barbican Centre',
-      date: '2020-2025',
+      date: '2020–2026',
       role: 'Programme Curator',
       description: 'Ongoing film programme bringing contemporary non-fiction and hybrid cinema from Eastern Europe and Central Asia to London.',
       link: 'https://www.barbican.org.uk/whats-on/series/new-east-cinema',

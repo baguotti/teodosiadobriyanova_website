@@ -31,7 +31,7 @@ export const Directing: React.FC = () => {
       <section className="space-y-6">
         <div className="space-y-2">
           <div className="text-xs uppercase tracking-[0.2em] text-[#A88B68] font-normal">
-            In Development
+            In Development (currently in Post-Production)
           </div>
           <h2 className=" text-2xl text-[#2B2927]">
             Сякаш не се е случвало <span className="italic text-xl text-[#75716B]">(Like Nothing Ever Happened)</span>
