@@ -51,7 +51,7 @@ export const Home: React.FC = () => {
           </div>
 
           <h1 className=" text-xl sm:text-2xl lg:text-4xl text-[#2B2927] font-normal leading-[1.2]">
-            Filmmaker, curator, and video journalist based between <span className="italic  text-[#A88B68]">London</span> and <span className="italic  text-[#A88B68]">Sofia</span>.
+            Filmmaker, curator, and video journalist based between London and Sofia.
           </h1>
 
           <div className="pt-2 flex items-center space-x-6 text-xs uppercase tracking-widest text-[#75716B]">
