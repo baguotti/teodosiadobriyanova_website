@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Technical Architecture & Deployment Workflow</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #3036d0;
+      --border-subtle: #30363d;
+      --text: #c9d1d9;
+      --heading: #ffffff;
+      --accent: #58a6ff;
+      --code-bg: #1f242c;
+      --accent-green: #3fb950;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: var(--heading);
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+      font-size: 2rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 32px;
+      font-size: 1.4rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+    pre, code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      background: var(--code-bg);
+      border-radius: 6px;
+    }
+    code {
+      padding: 2px 6px;
+      color: #ff7b72;
+    }
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+      border: 1px solid var(--border-subtle);
+    }
+    pre code {
+      padding: 0;
+      color: #e6edf3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid var(--border-subtle);
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: var(--code-bg);
+      color: var(--heading);
+    }
+    .copy-btn {
+      float: right;
+      background: #238636;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .copy-btn:hover {
+      background: #2ea043;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="copy-btn" onclick="copyRawText()">Copy Raw Prompt for IDE</button>
+  <h1>LLM Technical Architecture & Deployment Specification</h1>
+
+  <div class="card">
+    <p>Use this reference document to plan, bootstrap, build, and deploy new websites using the user's standardized tech stack and workflow.</p>
+  </div>
+
+  <h2>1. Tech Stack Specification</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Library / Tool</th>
+          <th>Configuration Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Framework</strong></td>
+          <td>React 19 (<code>react</code>, <code>react-dom</code>)</td>
+          <td>Strict Mode, TSX</td>
+        </tr>
+        <tr>
+          <td><strong>Language</strong></td>
+          <td>TypeScript (~5.9+)</td>
+          <td><code>tsconfig.json</code> strict mode</td>
+        </tr>
+        <tr>
+          <td><strong>Build Tool</strong></td>
+          <td>Vite 7+ (<code>vite</code>, <code>@vitejs/plugin-react</code>)</td>
+          <td>Configured in <code>vite.config.ts</code></td>
+        </tr>
+        <tr>
+          <td><strong>Styling</strong></td>
+          <td>Tailwind CSS v4 (<code>@tailwindcss/vite</code>)</td>
+          <td>Configured via Vite plugin</td>
+        </tr>
+        <tr>
+          <td><strong>Icons & Motion</strong></td>
+          <td><code>lucide-react</code>, <code>gsap</code>, <code>@gsap/react</code></td>
+          <td>GSAP context hook pattern</td>
+        </tr>
+        <tr>
+          <td><strong>Routing</strong></td>
+          <td>React Router v7 (<code>react-router-dom</code>)</td>
+          <td>SPA Client Routing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>2. Repository File Structure</h2>
+  <div class="card">
+<pre><code>├── .github/              # GitHub configurations
+├── public/               # Static public assets
+├── src/                  # Application source code
+│   ├── components/       # UI Components
+│   ├── App.tsx           # Root router / layout wrapper
+│   ├── main.tsx          # React entrypoint
+│   └── index.css         # Global Tailwind v4 imports (@import "tailwindcss";)
+├── CNAME                 # Apex domain for custom domain routing
+├── vercel.json           # Vercel deployment & rewrite config
+├── package.json          # Dependency manifest & build scripts
+├── vite.config.ts        # Vite build & plugin setup
+└── tsconfig.json         # TypeScript configuration</code></pre>
+  </div>
+
+  <h2>3. SPA Routing & Fallback Config (<code>vercel.json</code>)</h2>
+  <div class="card">
+<pre><code>{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}</code></pre>
+  </div>
+
+  <h2>4. Deployment & Domain Transfer Specification</h2>
+  <div class="card">
+    <h3>Hosting Pipeline</h3>
+    <ul>
+      <li><strong>Platform</strong>: Vercel (connected to GitHub <code>main</code> branch).</li>
+      <li><strong>Framework Preset</strong>: Vite</li>
+      <li><strong>Build Command</strong>: <code>npm run build</code> (<code>tsc -b && vite build</code>)</li>
+      <li><strong>Output Directory</strong>: <code>dist</code></li>
+      <li><strong>Install Command</strong>: <code>npm install</code></li>
+    </ul>
+
+    <h3>Custom Domain & DNS Mapping</h3>
+    <ol>
+      <li><strong>CNAME File</strong>: Placed at repository root containing the custom domain (e.g. <code>customdomain.com</code>).</li>
+      <li><strong>DNS Records</strong>:
+        <ul>
+          <li><strong>Apex (<code>@</code>)</strong>: Record <code>A</code> pointing to Vercel IP <code>76.76.21.21</code></li>
+          <li><strong>Subdomain (<code>www</code>)</strong>: Record <code>CNAME</code> pointing to <code>cname.vercel-dns.com</code></li>
+        </ul>
+      </li>
+      <li><strong>SSL</strong>: Managed automatically via Vercel Edge.</li>
+    </ol>
+  </div>
+
+  <h2>5. New Project Execution Commands</h2>
+  <div class="card">
+<pre><code># 1. Initialize Vite + React + TypeScript project
+npx -y create-vite@latest ./ --template react-ts
+
+# 2. Install core dependencies
+npm install react-router-dom lucide-react gsap @gsap/react
+
+# 3. Install styling dependencies (Tailwind v4)
+npm install -D tailwindcss @tailwindcss/vite @types/node
+
+# 4. Add CNAME & vercel.json files
+# 5. Push to GitHub for continuous Vercel deployment</code></pre>
+  </div>
+
+  <script>
+    function copyRawText() {
+      const text = `# AGENT INSTRUCTIONS: TECHNICAL ARCHITECTURE & DEPLOYMENT SYSTEM PROMPT
+
+You are an expert Frontend Architect & DevOps Engineer AI. Use this reference document to plan, bootstrap, build, and deploy new websites using the user's standardized tech stack and workflow.
+
+---
+
+## 1. TECH STACK SPECIFICATION
+
+When generating or refactoring code for new sites under this workflow, enforce these specific dependencies:
+
+- **Framework**: React 19 (\`react\`, \`react-dom\`)
+- **Language**: TypeScript (~5.9+)
+- **Build Tool**: Vite 7+ (\`vite\`, \`@vitejs/plugin-react\`)
+- **Styling**: Tailwind CSS v4 (\`@tailwindcss/vite\`)
+- **Icons & Animation**: \`lucide-react\`, \`gsap\`, \`@gsap/react\`
+- **Routing**: React Router v7 (\`react-router-dom\`)
+
+---
+
+## 2. REPOSITORY & FILE STRUCTURE REQUIREMENTS
+
+\`\`\`
+├── public/               # Static public assets
+├── src/                  # Application source code
+│   ├── components/       # UI Components
+│   ├── App.tsx           # Root router / layout wrapper
+│   ├── main.tsx          # React entrypoint
+│   └── index.css         # Global Tailwind v4 imports (@import "tailwindcss";)
+├── CNAME                 # Custom domain routing
+├── vercel.json           # Vercel deployment & rewrite config
+├── package.json          # Dependency manifest & build scripts
+├── vite.config.ts        # Vite build & plugin setup
+└── tsconfig.json         # TypeScript configuration
+\`\`\`
+
+---
+
+## 3. ROUTING & REWRITE RULES (vercel.json)
+
+\`\`\`json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+\`\`\`
+
+---
+
+## 4. DEPLOYMENT & DOMAIN TRANSFER SPECIFICATION
+
+### Hosting Pipeline
+- **Platform**: Vercel (GitHub integration on \`main\` branch).
+- **Framework Preset**: \`Vite\`
+- **Build Command**: \`npm run build\`
+- **Output Directory**: \`dist\`
+
+### Custom Domain & DNS Mapping Rules
+1. **Root \`CNAME\` File**: Placed at repository root containing only the domain name.
+2. **DNS Records**:
+   - **Apex (\`@\`)**: \`A\` record pointing to \`76.76.21.21\`
+   - **Subdomain (\`www\`)**: \`CNAME\` record pointing to \`cname.vercel-dns.com\`
+
+---
+
+## 5. NEW PROJECT BOOTSTRAPPING EXECUTION PROTOCOL
+
+\`\`\`bash
+npx -y create-vite@latest ./ --template react-ts
+npm install react-router-dom lucide-react gsap @gsap/react
+npm install -D tailwindcss @tailwindcss/vite @types/node
+\`\`\``;
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Raw Prompt copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
