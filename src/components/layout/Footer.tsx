@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
         {/* Right / External Links */}
         <div className="flex items-center space-x-6 text-[11px] uppercase tracking-widest">
           <a 
-            href="https://www.instagram.com/tova.ne.e.nasilie/" 
+            href="https://www.instagram.com/teodosiadob/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="hover:text-[#2B2927] transition-colors inline-flex items-center"
