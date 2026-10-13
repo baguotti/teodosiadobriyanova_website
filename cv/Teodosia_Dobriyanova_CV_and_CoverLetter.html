@@ -1,0 +1,2559 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teodosia Dobriyanova – CV &amp; Cover Letter</title>
+  <!-- Google Fonts: Montserrat for authentic editorial Canva template typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --text-dark: #111111;
+      --text-body: #242424;
+      --text-muted: #555555;
+      --divider-color: #1a1a1a;
+      /* Subtle pastel green close to light grey for CV page */
+      --page-bg: #edf2ee;
+      --frame-border: #a8b8ab;
+      /* Default HTML screen backdrop is fully white */
+      --screen-bg: #ffffff;
+      /* Global text scaling factor for fitting pages */
+      --cv-scale: 1;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--screen-bg);
+      font-family: var(--font-main);
+      color: var(--text-body);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.25s ease;
+    }
+
+    /* Dark Mode for the HTML Canvas Backdrop */
+    body.canvas-dark {
+      --screen-bg: #111111;
+      background-color: #111111;
+    }
+
+    body.canvas-dark .action-bar {
+      background: #1c1c1c;
+      border-bottom-color: #333333;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    body.canvas-dark .toolbar-title,
+    body.canvas-dark .scale-badge {
+      color: #ffffff;
+    }
+
+    body.canvas-dark .toolbar-hint {
+      color: #999999;
+    }
+
+    body.canvas-dark .color-label,
+    body.canvas-dark .toolbar-label {
+      color: #cccccc;
+    }
+
+    body.canvas-dark .btn-secondary {
+      background-color: #2a2a2a;
+      color: #eeeeee;
+      border-color: #444444;
+    }
+
+    body.canvas-dark .btn-secondary:hover {
+      background-color: #383838;
+      border-color: #555555;
+    }
+
+    body.canvas-dark .toolbar-divider {
+      background-color: #383838;
+    }
+
+    body.canvas-dark .btn-print {
+      background-color: #ffffff;
+      color: #111111;
+    }
+
+    body.canvas-dark .btn-print:hover {
+      background-color: #e0e0e0;
+    }
+
+    body.canvas-dark .cv-page {
+      box-shadow: 0 8px 36px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    /* Top Floating Interactive Toolbar (Hidden in Print) */
+    .action-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #e0e4e1;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      flex-wrap: wrap;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .toolbar-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.25s ease;
+    }
+
+    .edit-indicator {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #2e7d32;
+      box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+    }
+
+    .toolbar-hint {
+      font-size: 11px;
+      color: #666666;
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+
+    .toolbar-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #444444;
+      margin-left: 2px;
+      transition: color 0.25s ease;
+    }
+
+    .toolbar-divider {
+      width: 1px;
+      height: 20px;
+      background-color: #e0e4e1;
+      margin: 0 4px;
+    }
+
+    /* Text formatting toolbar group */
+    .fmt-btn-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+      padding: 1px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.canvas-dark .fmt-btn-group {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-fmt {
+      background: transparent;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: inherit;
+      width: 26px;
+      height: 25px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.12s ease;
+    }
+
+    .btn-fmt:hover {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    body.canvas-dark .btn-fmt:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-fmt.active {
+      background: #2e7d32;
+      color: #ffffff;
+    }
+
+    /* Scale badge */
+    .scale-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      min-width: 44px;
+      text-align: center;
+      color: #111111;
+    }
+
+    /* Color picker input */
+    .color-picker-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    input[type="color"] {
+      -webkit-appearance: none;
+      border: 1px solid #bbbbbb;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      background: none;
+      padding: 0;
+      outline: none;
+    }
+
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    input[type="color"]::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+
+    /* Preset color swatches */
+    .swatches {
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    .swatch-btn {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      outline: none;
+    }
+
+    .swatch-btn:hover {
+      transform: scale(1.15);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .swatch-btn.active {
+      box-shadow: 0 0 0 2px #1a1a1a;
+    }
+
+    body.canvas-dark .swatch-btn.active {
+      box-shadow: 0 0 0 2px #ffffff;
+    }
+
+    /* Buttons */
+    .btn-secondary {
+      background-color: #f2f5f3;
+      color: #222222;
+      border: 1px solid #c8d0ca;
+      padding: 6px 11px;
+      font-family: var(--font-main);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #e4ebe5;
+      border-color: #afb9b0;
+    }
+
+    .btn-print {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      border: none;
+      padding: 7px 16px;
+      font-family: var(--font-main);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-print:hover {
+      background-color: #333333;
+    }
+
+    .btn-print:active {
+      transform: scale(0.98);
+    }
+
+    /* Auto-save toast */
+    #saveStatus {
+      font-size: 11px;
+      color: #2e7d32;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    body.canvas-dark #saveStatus {
+      color: #81c784;
+    }
+
+    /* Floating Selection Formatting Toolbar */
+    .floating-toolbar {
+      position: fixed;
+      z-index: 2000;
+      display: none;
+      background: #1e1e1e;
+      color: #ffffff;
+      padding: 3px 5px;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
+      align-items: center;
+      gap: 2px;
+      font-family: var(--font-main);
+      transform: translate(-50%, -100%);
+      margin-top: -8px;
+      pointer-events: auto;
+      user-select: none;
+    }
+
+    .floating-toolbar::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #1e1e1e;
+    }
+
+    .floating-toolbar button {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-family: var(--font-main);
+      font-size: 11.5px;
+      font-weight: 600;
+      min-width: 25px;
+      height: 25px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+      transition: background 0.12s ease;
+    }
+
+    .floating-toolbar button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .floating-toolbar button.active {
+      background: #2e7d32;
+      color: #ffffff;
+    }
+
+    .floating-toolbar .ft-divider {
+      width: 1px;
+      height: 15px;
+      background: rgba(255, 255, 255, 0.25);
+      margin: 0 2px;
+    }
+
+    /* CV Document Wrapper */
+    .cv-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px;
+      gap: 32px;
+    }
+
+    /* Standard A4 Page container - Full Bleed */
+    .cv-page {
+      background-color: var(--page-bg);
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm 18mm;
+      box-shadow: 0 4px 22px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.2s ease, border 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    /* Optional Framed Mode if user toggles it */
+    .cv-page.framed {
+      border: 1.5px solid var(--frame-border);
+      box-sizing: border-box;
+    }
+
+    /* Editable Elements Styling */
+    [contenteditable="true"] {
+      outline: none;
+      border-radius: 2px;
+      transition: background-color 0.15s ease, box-shadow 0.15s ease;
+      min-height: 1em;
+    }
+
+    [contenteditable="true"]:hover {
+      background-color: rgba(0, 0, 0, 0.025);
+      cursor: text;
+    }
+
+    [contenteditable="true"]:focus {
+      background-color: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.35);
+    }
+
+    /* Header Layout */
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 12px;
+    }
+
+    .name-block {
+      line-height: 0.98;
+    }
+
+    .candidate-name {
+      font-size: calc(32px * var(--cv-scale));
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      display: block;
+    }
+
+    .candidate-role {
+      font-size: calc(13.5px * var(--cv-scale));
+      font-weight: 500;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      white-space: nowrap;
+    }
+
+    /* Divider Lines */
+    .divider-rule {
+      border: none;
+      border-top: 1.5px solid var(--divider-color);
+      margin: 0;
+      width: 100%;
+    }
+
+    /* Contact Strip */
+    .contact-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 2px;
+      flex-wrap: nowrap;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: calc(11px * var(--cv-scale));
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      color: var(--text-dark);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .contact-item svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    /* Page Content Area (Dropzone for moveable sections) */
+    .page-content-area {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      position: relative;
+    }
+
+    /* Reorderable Section Container */
+    .cv-section {
+      position: relative;
+      border-radius: 4px;
+      transition: background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    /* Subtle divider line between adjacent sections */
+    .cv-section + .cv-section {
+      margin-top: 14px;
+      padding-top: 13px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .cv-section:hover {
+      outline: 1.5px dashed rgba(46, 125, 50, 0.35);
+      outline-offset: 4px;
+    }
+
+    /* Floating control bar for sections on hover */
+    .cv-section-controls {
+      position: absolute;
+      top: -13px;
+      right: 4px;
+      z-index: 60;
+      display: none;
+      background: #ffffff;
+      border: 1px solid #c8d0ca;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+      border-radius: 18px;
+      padding: 2px 5px;
+      align-items: center;
+      gap: 3px;
+      user-select: none;
+    }
+
+    .cv-section:hover > .cv-section-controls {
+      display: inline-flex;
+    }
+
+    /* Section Headings */
+    .section-heading {
+      font-size: calc(13px * var(--cv-scale));
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    /* Bio */
+    .bio-text {
+      font-size: calc(11.5px * var(--cv-scale));
+      line-height: 1.55;
+      color: var(--text-body);
+      font-weight: 400;
+      text-align: justify;
+    }
+
+    /* Experience Items & Reordering */
+    .jobs-container {
+      position: relative;
+      min-height: 30px;
+    }
+
+    .job-item {
+      position: relative;
+      margin-bottom: 12px;
+      padding: 3px 4px;
+      border-radius: 4px;
+      transition: background 0.15s ease;
+    }
+
+    .job-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-item:hover {
+      background: rgba(0, 0, 0, 0.02);
+      outline: 1px dashed rgba(46, 125, 50, 0.28);
+    }
+
+    /* Job Controls pill on hover */
+    .job-controls {
+      position: absolute;
+      top: -11px;
+      right: 4px;
+      z-index: 50;
+      display: none;
+      background: #ffffff;
+      border: 1px solid #d0d5d1;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      padding: 1px 4px;
+      align-items: center;
+      gap: 2px;
+      user-select: none;
+    }
+
+    .job-item:hover > .job-controls {
+      display: inline-flex;
+    }
+
+    /* Control buttons inside pills */
+    .ctrl-btn {
+      background: transparent;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 600;
+      color: #333333;
+      padding: 2px 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      transition: background 0.12s ease, color 0.12s ease;
+      line-height: 1;
+    }
+
+    .ctrl-btn:hover {
+      background: #2e7d32;
+      color: #ffffff;
+    }
+
+    .ctrl-btn.btn-delete:hover {
+      background: #d32f2f;
+      color: #ffffff;
+    }
+
+    .ctrl-btn.drag-handle {
+      cursor: grab;
+      color: #555555;
+      font-size: 12px;
+      padding: 2px 4px;
+    }
+
+    .ctrl-btn.drag-handle:active {
+      cursor: grabbing;
+    }
+
+    /* Button to add job */
+    .btn-add-job {
+      margin-top: 8px;
+      background: transparent;
+      border: 1px dashed #7a8b7e;
+      color: #3a533e;
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-add-job:hover {
+      background: rgba(46, 125, 50, 0.1);
+      border-color: #2e7d32;
+      color: #2e7d32;
+    }
+
+    /* Job Content Typography */
+    .job-header-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: calc(12px * var(--cv-scale));
+    }
+
+    .job-company {
+      font-weight: 800;
+      font-size: calc(12.5px * var(--cv-scale));
+      color: var(--text-dark);
+    }
+
+    .job-date {
+      font-weight: 500;
+      font-size: calc(11px * var(--cv-scale));
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+
+    .job-title {
+      font-size: calc(11.5px * var(--cv-scale));
+      font-style: italic;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-top: 2px;
+      margin-bottom: 4px;
+    }
+
+    .job-title .note {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    /* Bullet Points */
+    ul.job-bullets {
+      list-style-type: disc;
+      margin: 0;
+      padding-left: 17px;
+    }
+
+    ul.job-bullets li {
+      font-size: calc(11px * var(--cv-scale));
+      line-height: 1.46;
+      color: var(--text-body);
+      margin-bottom: 3px;
+      font-weight: 400;
+    }
+
+    ul.job-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Two-column layout for Education / Skills / Languages */
+    .columns-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 4px;
+    }
+
+    ul.clean-list {
+      list-style-type: disc;
+      padding-left: 17px;
+      margin: 0;
+    }
+
+    ul.clean-list li {
+      font-size: calc(11px * var(--cv-scale));
+      line-height: 1.5;
+      color: var(--text-body);
+      margin-bottom: 3px;
+    }
+
+    /* Page 2 Header */
+    .page2-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 10px;
+    }
+
+    .page2-title {
+      font-size: calc(14px * var(--cv-scale));
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+
+    .page2-role {
+      font-size: calc(11px * var(--cv-scale));
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Dragging States & Drop Indicator Line */
+    .is-dragging {
+      opacity: 0.35 !important;
+      transform: scale(0.99);
+    }
+
+    .drop-indicator {
+      position: absolute;
+      left: 0;
+      height: 3px;
+      background: #2e7d32;
+      border-radius: 2px;
+      box-shadow: 0 0 8px rgba(46, 125, 50, 0.7);
+      pointer-events: none;
+      z-index: 200;
+      display: none;
+      transition: top 0.08s ease;
+    }
+
+    .drop-indicator::before,
+    .drop-indicator::after {
+      content: '';
+      position: absolute;
+      top: -3.5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2e7d32;
+    }
+    .drop-indicator::before { left: -4px; }
+    .drop-indicator::after { right: -4px; }
+
+    /* Visual highlight flash when item or section is moved */
+    @keyframes highlightFlash {
+      0% { background-color: rgba(46, 125, 50, 0.3); }
+      100% { background-color: transparent; }
+    }
+
+    .item-flash {
+      animation: highlightFlash 1.1s ease-out;
+    }
+
+    /* Print Specific Styling */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      body {
+        background-color: var(--page-bg) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .action-bar,
+      .cv-section-controls,
+      .job-controls,
+      .floating-toolbar,
+      .btn-add-job,
+      .drop-indicator {
+        display: none !important;
+      }
+
+      .cv-wrapper {
+        padding: 0 !important;
+        gap: 0 !important;
+      }
+
+      .cv-page {
+        box-shadow: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 15mm 18mm !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        box-sizing: border-box !important;
+      }
+
+      .cv-page:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+
+      .cv-section {
+        outline: none !important;
+      }
+
+      .job-item {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        outline: none !important;
+        background: transparent !important;
+      }
+
+      .item-flash {
+        animation: none !important;
+      }
+
+      [contenteditable="true"] {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+      /* Export Scope Print Filters */
+      body.print-cv-only .cover-letter-page {
+        display: none !important;
+      }
+
+      body.print-cv-only #page2 {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+
+      body.print-cl-only .cv-page:not(.cover-letter-page) {
+        display: none !important;
+      }
+
+      body.print-cl-only .cover-letter-page {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+    }
+
+    /* Cover Letter Page Layout & Typography */
+    .cover-letter-page {
+      background-color: var(--page-bg);
+    }
+
+    .cl-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding-top: 10px;
+    }
+
+    .cl-salutation {
+      font-size: calc(11.5px * var(--cv-scale));
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 11px;
+    }
+
+    .cl-paragraph {
+      font-size: calc(10.8px * var(--cv-scale));
+      line-height: 1.48;
+      color: var(--text-body);
+      margin-bottom: 9px;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .cl-paragraph a,
+    .cl-link-list a {
+      color: var(--text-dark);
+      text-decoration: underline;
+      text-underline-offset: 2.5px;
+      text-decoration-color: rgba(26, 26, 26, 0.45);
+      transition: text-decoration-color 0.15s ease, color 0.15s ease;
+    }
+
+    .cl-paragraph a:hover,
+    .cl-link-list a:hover {
+      text-decoration-color: var(--text-dark);
+      color: #000000;
+    }
+
+    .cl-signoff {
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    .cl-closing {
+      font-size: calc(10.8px * var(--cv-scale));
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+
+    .cl-signature-name {
+      font-size: calc(11.5px * var(--cv-scale));
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 2px;
+    }
+
+    .cl-links-section {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--divider-color);
+    }
+
+    .cl-links-title {
+      font-size: calc(11px * var(--cv-scale));
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .cl-links-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+    }
+
+    .cl-link-group-heading {
+      font-size: calc(10.5px * var(--cv-scale));
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cl-link-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .cl-link-list li {
+      font-size: calc(10.2px * var(--cv-scale));
+      line-height: 1.34;
+      position: relative;
+      padding-left: 11px;
+    }
+
+    .cl-link-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    /* Export Scope & Dropdown Toolbar Styling */
+    .export-scope-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .toolbar-select {
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 600;
+      color: #333333;
+      background: #ffffff;
+      border: 1px solid #cfd4d0;
+      border-radius: 4px;
+      padding: 3px 6px;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .toolbar-select:hover, .toolbar-select:focus {
+      border-color: #2e7d32;
+    }
+
+    body.canvas-dark .toolbar-select {
+      background: #2a2a2a;
+      color: #eeeeee;
+      border-color: #444444;
+    }
+
+    .dropdown-container {
+      position: relative;
+      display: inline-flex;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      right: 0;
+      background: #ffffff;
+      border: 1px solid #dcdcdc;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      z-index: 1100;
+      min-width: 200px;
+      overflow: hidden;
+      padding: 4px 0;
+    }
+
+    body.canvas-dark .dropdown-menu {
+      background: #222222;
+      border-color: #444444;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      width: 100%;
+      padding: 7px 12px;
+      text-align: left;
+      background: transparent;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 11px;
+      font-weight: 600;
+      color: #333333;
+      cursor: pointer;
+      transition: background-color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    body.canvas-dark .dropdown-item {
+      color: #eeeeee;
+    }
+
+    .dropdown-item:hover {
+      background-color: rgba(46, 125, 50, 0.12);
+      color: #1b5e20;
+    }
+
+    body.canvas-dark .dropdown-item:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .jump-btn-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    @media screen and (max-width: 900px) {
+      .action-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cv-page {
+        width: 100%;
+        min-height: auto;
+        padding: 24px 18px;
+      }
+      .contact-bar {
+        flex-wrap: wrap;
+        gap: 8px 16px;
+      }
+      .candidate-name {
+        font-size: 26px;
+      }
+      .candidate-role {
+        font-size: 12px;
+      }
+      .columns-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .cl-links-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body class="">
+
+  <!-- Non-Printing Interactive Quick Action Bar -->
+  <div class="action-bar">
+    <div class="toolbar-group">
+      <span class="toolbar-title">
+        <span class="edit-indicator"></span>
+        Interactive CV Editor
+      </span>
+      <span id="saveStatus" style="opacity: 0;">✓ Auto-saved</span>
+    </div>
+
+    <!-- Text Formatting Quick Tools -->
+    <div class="toolbar-group">
+      <div class="fmt-btn-group" title="Text Formatting (Selection)">
+        <button id="barBoldBtn" class="btn-fmt" title="Bold (Cmd+B)"><b>B</b></button>
+        <button id="barItalicBtn" class="btn-fmt" title="Italic (Cmd+I)"><i>I</i></button>
+        <button id="barUnderlineBtn" class="btn-fmt" title="Underline (Cmd+U)"><u>U</u></button>
+        <button id="barSizeDownBtn" class="btn-fmt" title="Decrease Selected Text Size">A-</button>
+        <button id="barSizeUpBtn" class="btn-fmt" title="Increase Selected Text Size">A+</button>
+      </div>
+
+      <div class="toolbar-divider"></div>
+
+      <!-- CV Overall Text Scaler (Fit to page) -->
+      <span class="toolbar-label">CV Size:</span>
+      <button id="scaleDownBtn" class="btn-secondary" style="padding: 4px 8px;" title="Scale CV text smaller to fit page">A-</button>
+      <span id="scaleDisplay" class="scale-badge" title="Current overall CV text scale">100%</span>
+      <button id="scaleUpBtn" class="btn-secondary" style="padding: 4px 8px;" title="Scale CV text larger">A+</button>
+      <button id="scaleResetBtn" class="btn-secondary" style="padding: 4px 6px; font-size: 10px;" title="Reset scale to 100%">100%</button>
+
+      <div class="toolbar-divider"></div>
+
+      <!-- Backdrop Canvas Theme Button -->
+      <button id="canvasThemeBtn" class="btn-secondary" title="Switch HTML backdrop canvas between white and black">Canvas: White ⚪</button>
+
+      <!-- Page Color Controls -->
+      <span class="toolbar-label">Page:</span>
+      <div class="color-picker-wrapper">
+        <input type="color" id="bgColorPicker" value="#edf2ee" title="Choose custom CV page color">
+      </div>
+
+      <div class="swatches">
+        <button class="swatch-btn active" style="background-color: #edf2ee;" data-color="#edf2ee" title="Pastel Green / Light Grey (Default)"></button>
+        <button class="swatch-btn" style="background-color: #faf7f2;" data-color="#faf7f2" title="Warm Ivory / Cream"></button>
+        <button class="swatch-btn" style="background-color: #ffffff;" data-color="#ffffff" title="Pure White"></button>
+        <button class="swatch-btn" style="background-color: #f2f5f7;" data-color="#f2f5f7" title="Soft Light Blue"></button>
+        <button class="swatch-btn" style="background-color: #f6f2ec;" data-color="#f6f2ec" title="Muted Sand"></button>
+      </div>
+
+      <button id="toggleFrameBtn" class="btn-secondary" title="Toggle outer frame border on or off">
+        Frame: Off
+      </button>
+
+      <button id="resetBtn" class="btn-secondary" title="Revert text, order, and styling back to original">
+        Reset
+      </button>
+
+      <div class="toolbar-divider"></div>
+
+      <!-- Quick Page Jump -->
+      <div class="jump-btn-group" title="Quickly scroll to page">
+        <span class="toolbar-label">Jump:</span>
+        <button id="jumpP1Btn" class="btn-secondary" style="padding: 3px 6px; font-size: 10px;" title="Jump to CV Page 1">P1</button>
+        <button id="jumpP2Btn" class="btn-secondary" style="padding: 3px 6px; font-size: 10px;" title="Jump to CV Page 2">P2</button>
+        <button id="jumpP3Btn" class="btn-secondary" style="padding: 3px 6px; font-size: 10px;" title="Jump to Cover Letter">Letter</button>
+      </div>
+
+      <div class="toolbar-divider"></div>
+
+      <!-- Export Scope Selector -->
+      <div class="export-scope-wrapper" title="Choose which pages to export or print">
+        <span class="toolbar-label">Scope:</span>
+        <select id="exportScopeSelect" class="toolbar-select">
+          <option value="both" selected="">Both (CV &amp; Cover Letter)</option>
+          <option value="cv">CV Only (Pages 1–2)</option>
+          <option value="cover-letter">Cover Letter Only</option>
+        </select>
+      </div>
+
+      <!-- Download HTML Dropdown -->
+      <div class="dropdown-container">
+        <button id="downloadHtmlBtn" class="btn-secondary" title="Download clean self-contained HTML file">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download HTML ▾
+        </button>
+        <div class="dropdown-menu" id="downloadMenu">
+          <button class="dropdown-item" id="dlBothBtn">
+            <span>📄</span> Download Both (CV &amp; Letter)
+          </button>
+          <button class="dropdown-item" id="dlCvBtn">
+            <span>📋</span> Download CV Only (P1–P2)
+          </button>
+          <button class="dropdown-item" id="dlClBtn">
+            <span>✉️</span> Download Cover Letter Only
+          </button>
+        </div>
+      </div>
+
+      <!-- Print / PDF Dropdown -->
+      <div class="dropdown-container">
+        <button id="printBtn" class="btn-print" title="Print or save as PDF">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          Print / PDF ▾
+        </button>
+        <div class="dropdown-menu" id="printMenu">
+          <button class="dropdown-item" id="prBothBtn">
+            <span>📄</span> Print Both (CV &amp; Letter)
+          </button>
+          <button class="dropdown-item" id="prCvBtn">
+            <span>📋</span> Print CV Only (P1–P2)
+          </button>
+          <button class="dropdown-item" id="prClBtn">
+            <span>✉️</span> Print Cover Letter Only
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Formatting Toolbar for Text Selection -->
+  <div class="floating-toolbar" id="floatingToolbar">
+    <button id="ftBoldBtn" title="Bold"><b>B</b></button>
+    <button id="ftItalicBtn" title="Italic"><i>I</i></button>
+    <button id="ftUnderlineBtn" title="Underline"><u>U</u></button>
+    <span class="ft-divider"></span>
+    <button id="ftSizeDownBtn" title="Decrease text size">A-</button>
+    <button id="ftSizeUpBtn" title="Increase text size">A+</button>
+    <button id="ftSize11Btn" title="Set text size to 11px">11</button>
+    <button id="ftSize13Btn" title="Set text size to 13px">13</button>
+    <span class="ft-divider"></span>
+    <button id="ftClearBtn" title="Clear formatting">✕</button>
+  </div>
+
+  <!-- Drag Insertion Indicator -->
+  <div class="drop-indicator" id="dropIndicator"></div>
+
+  <!-- Main CV Pages Container -->
+  <div class="cv-wrapper" id="cvWrapper">
+
+    <!-- PAGE 1 -->
+    <div class="cv-page" id="page1">
+
+      <!-- Header -->
+      <header class="header-top">
+        <div class="name-block">
+          <span class="candidate-name" contenteditable="true" spellcheck="false">TEODOSIA</span>
+          <span class="candidate-name" contenteditable="true" spellcheck="false">DOBRIYANOVA</span>
+        </div>
+        <div class="candidate-role" contenteditable="true" spellcheck="false">VIDEO PRODUCER</div>
+      </header>
+
+      <!-- Divider Line Above Contact -->
+      <hr class="divider-rule">
+
+      <!-- Contact Bar -->
+      <div class="contact-bar">
+        <a class="contact-item" href="tel:+447514220976">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+          <span contenteditable="true" spellcheck="false">+447514220976</span>
+        </a>
+        <a class="contact-item" href="mailto:tdobriyanova@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+          <span contenteditable="true" spellcheck="false">tdobriyanova@gmail.com</span>
+        </a>
+        <span class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+          <span contenteditable="true" spellcheck="false">London, UK</span>
+        </span>
+      </div>
+
+      <!-- Divider Line Below Contact -->
+      <hr class="divider-rule" style="margin-bottom: 2px;">
+
+      <!-- Page 1 Content Container for Reorderable Sections -->
+      <div class="page-content-area" id="page1Content">
+
+        <!-- BIO SECTION -->
+        <section class="cv-section" data-section-id="bio">
+          <div class="cv-section-controls">
+            <span class="ctrl-btn drag-handle" title="Drag to reorder section">⠿ Move</span>
+            <button class="ctrl-btn btn-sec-up" title="Move Section Up">▲</button>
+            <button class="ctrl-btn btn-sec-down" title="Move Section Down">▼</button>
+            <button class="ctrl-btn btn-sec-page" title="Move Section to Page 2">⇄ Page 2</button>
+          </div>
+          <h2 class="section-heading" contenteditable="true" spellcheck="false">Bio</h2>
+          <p class="bio-text" contenteditable="true" spellcheck="false">
+            A London-based video journalist, filmmaker, and film programmer.&nbsp;</p>
+        </section>
+
+        <!-- WORK EXPERIENCE SECTION (Part 1) -->
+        <section class="cv-section" data-section-id="work-p1">
+          <div class="cv-section-controls">
+            <span class="ctrl-btn drag-handle" title="Drag to reorder section">⠿ Move</span>
+            <button class="ctrl-btn btn-sec-up" title="Move Section Up">▲</button>
+            <button class="ctrl-btn btn-sec-down" title="Move Section Down">▼</button>
+            <button class="ctrl-btn btn-sec-page" title="Move Section to Page 2">⇄ Page 2</button>
+          </div>
+          <h2 class="section-heading" contenteditable="true" spellcheck="false">Work Experience</h2>
+
+          <div class="jobs-container">
+            <!-- Job 1 -->
+            <article class="job-item" data-job-id="job-1">
+              <div class="job-controls">
+                <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+                <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+                <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+                <button class="ctrl-btn btn-job-page" title="Move Job to Page 2">⇄ Page 2</button>
+                <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+                <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+              </div>
+              <div class="job-header-line">
+                <span class="job-company" contenteditable="true" spellcheck="false">Mashable</span>
+                <span class="job-date" contenteditable="true" spellcheck="false">October 2021 – October 2026</span>
+              </div>
+              <div class="job-title" contenteditable="true" spellcheck="false">Video Journalist</div>
+              <ul class="job-bullets" contenteditable="true" spellcheck="false">
+                <li>Produced long and short-form explainers and documentaries across climate, tech, and culture for Mashable and CNET's websites, YouTube and social media channels.</li>
+                <li>Developed and produced original Mashable series (Mashable Now, How to Change a City, Trending Now)</li>
+                <li>Produced and directed explainers in collaboration with journalists across different sections at Mashable</li>
+                <li>Pitched, researched, scripted, and lead interviews</li><li>Wrote articles</li>
+                <li>Produced film shoots, acted as cameraperson, edited original content</li>
+              </ul>
+            </article>
+
+            <!-- Job 2 -->
+            <article class="job-item" data-job-id="job-2">
+              <div class="job-controls">
+                <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+                <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+                <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+                <button class="ctrl-btn btn-job-page" title="Move Job to Page 2">⇄ Page 2</button>
+                <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+                <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+              </div>
+              <div class="job-header-line">
+                <span class="job-company" contenteditable="true" spellcheck="false">Like Nothing Ever Happened</span>
+                <span class="job-date" contenteditable="true" spellcheck="false">Short documentary in post-production</span>
+              </div>
+              <div class="job-title" contenteditable="true" spellcheck="false">Director/Co-producer&nbsp;&nbsp;<span class="note" style="color: rgb(85, 85, 85);">(documentary short)</span></div>
+              <ul class="job-bullets" contenteditable="true" spellcheck="false">
+                <li>Developed, pitched, and secured funding for a short hybrid documentary retelling the story of my grandmother's attempted escape from Communist Bulgaria</li>
+                <li>Gathered a production and postproduction team and worked with them to create the world of the film</li>
+                <li>Alongside the producer, managed budgets, schedules, call sheets, etc.</li>
+                <li>Researched and negotiated archival footage</li>
+              </ul>
+            </article>
+
+            <!-- Job 3 -->
+            <article class="job-item" data-job-id="job-3">
+              <div class="job-controls">
+                <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+                <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+                <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+                <button class="ctrl-btn btn-job-page" title="Move Job to Page 2">⇄ Page 2</button>
+                <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+                <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+              </div>
+              <div class="job-header-line">
+                <span class="job-company" contenteditable="true" spellcheck="false">This Isn't Violence</span>
+                <span class="job-date" contenteditable="true" spellcheck="false">2023</span>
+              </div>
+              <div class="job-title" contenteditable="true" spellcheck="false">Director/ Producer <span class="note">(interactive installation about domestic violence survivors)</span></div>
+              <ul class="job-bullets" contenteditable="true" spellcheck="false">
+                <li>Developed the concept and secured project funding</li>
+                <li>Secured a project partnership with an NGO working with survivors of abuse</li>
+                <li>Gathered a team of producers, animators, a sound designer, and a web developer</li>
+                <li>Worked with survivors to help tell their stories</li>
+                <li>Worked with actors to create voice-over recordings for the survivors who chose to remain anonymous</li>
+                <li>Adapted the installation for a physical show at a gallery in Sofia, Bulgaria</li>
+              </ul>
+            </article>
+          <article class="job-item">
+            <div class="job-controls">
+              <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+              <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+              <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+              <button class="ctrl-btn btn-job-page" title="Move Job to Page 2">⇄ Page 2</button>
+              <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+              <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+            </div>
+            <div class="job-header-line">
+              <span class="job-company" contenteditable="true" spellcheck="false">Multimedia Anthropology Lab</span>
+              <span class="job-date" contenteditable="true" spellcheck="false">May - October 2021</span>
+            </div>
+            <div class="job-title" contenteditable="true" spellcheck="false">Video Producer</div>
+            <ul class="job-bullets" contenteditable="true" spellcheck="false">
+              <li>Worked closely with anthropologists and women from the Guarani-Kaiowá community to create visual testimonies documenting cases of gender-based violence</li>
+            </ul>
+          </article>
+          <article class="job-item">
+            <div class="job-controls">
+              <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+              <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+              <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+              <button class="ctrl-btn btn-job-page" title="Move Job to Page 2">⇄ Page 2</button>
+              <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+              <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+            </div>
+            <div class="job-header-line">
+              <span class="job-company" contenteditable="true" spellcheck="false">Polar Media</span>
+              <span class="job-date" contenteditable="true" spellcheck="false">April – September 2021</span>
+            </div>
+            <div class="job-title" contenteditable="true" spellcheck="false">Production Coordinator</div>
+            <ul class="job-bullets" contenteditable="true" spellcheck="false">
+              <li>Organised film shoots in pre-production, creating budget sheets, call sheets, and risk assessments</li>
+              <li>Scouted and hired film crew and cast members</li>
+              <li>Managed shooting schedules during production</li>
+              <li>Assisted during post-production, managed communication with clients and oversaw delivery</li>
+            </ul>
+          </article></div>
+
+          <button class="btn-add-job" title="Add a new job entry to this section">+ Add Job</button>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="cv-page" id="page2">
+
+      <!-- Page 2 Sub-Header -->
+      <div class="page2-header">
+        <span class="page2-title" contenteditable="true" spellcheck="false">Teodosia Dobriyanova</span>
+        <span class="page2-role" contenteditable="true" spellcheck="false">Video Producer</span>
+      </div>
+      <hr class="divider-rule" style="margin-bottom: 12px;">
+
+      <!-- Page 2 Content Container for Reorderable Sections -->
+      <div class="page-content-area" id="page2Content">
+
+        <!-- WORK EXPERIENCE SECTION (Part 2) -->
+        
+
+        <!-- EDUCATION SECTION -->
+        <section class="cv-section" data-section-id="work-p2" draggable="false">
+          <div class="cv-section-controls">
+            <span class="ctrl-btn drag-handle" title="Drag to reorder section">⠿ Move</span>
+            <button class="ctrl-btn btn-sec-up" title="Move Section Up">▲</button>
+            <button class="ctrl-btn btn-sec-down" title="Move Section Down">▼</button>
+            <button class="ctrl-btn btn-sec-page" title="Move Section to Page 1">⇄ Page 1</button>
+          </div>
+          <h2 class="section-heading" contenteditable="true" spellcheck="false">Work Experience (Continued)</h2>
+
+          <div class="jobs-container">
+            <!-- Job 4 -->
+            
+
+            <!-- Job 5 -->
+            
+
+            <!-- Job 6 -->
+            <article class="job-item" data-job-id="job-6">
+              <div class="job-controls">
+                <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+                <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+                <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+                <button class="ctrl-btn btn-job-page" title="Move Job to Page 1">⇄ Page 1</button>
+                <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+                <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+              </div>
+              <div class="job-header-line">
+                <span class="job-company" contenteditable="true" spellcheck="false">Mediorite</span>
+                <span class="job-date" contenteditable="true" spellcheck="false">October 2019 – July 2020</span>
+              </div>
+              <div class="job-title" contenteditable="true" spellcheck="false">Production Coordinator</div>
+              <ul class="job-bullets" contenteditable="true" spellcheck="false">
+                <li>Organised production workflows, managed budgets and helped project planning</li>
+                <li>Created call sheets and risk assessments for shoots</li>
+                <li>Helped put together funding applications and project pitches</li>
+                <li>Managed film shoots during pre-production and production</li>
+                <li>Assisted during post-production, managed communication with clients and oversaw delivery</li>
+              </ul>
+            </article>
+
+            <!-- Job 7 -->
+            <article class="job-item" data-job-id="job-7">
+              <div class="job-controls">
+                <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+                <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+                <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+                <button class="ctrl-btn btn-job-page" title="Move Job to Page 1">⇄ Page 1</button>
+                <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+                <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+              </div>
+              <div class="job-header-line">
+                <span class="job-company" contenteditable="true" spellcheck="false">Barbican Centre</span>
+                <span class="job-date" contenteditable="true" spellcheck="false">2021 – Present</span>
+              </div>
+              <div class="job-title" contenteditable="true" spellcheck="false">Freelance Film Programmer</div>
+              <ul class="job-bullets" contenteditable="true" spellcheck="false">
+                <li>Lead the curation of the New East Cinema programme at the Barbican Centre between 2021 and 2026</li>
+                <li>Co-develop and rebrand the series to a new branch called Kino Bloc in 2026</li>
+                <li>Co-curate the first ever UK retrospective of Binka Zhelyazkova's films in 2023</li>
+                <li>Curate a retrospective season called Cold War Visions, which examined the ways filmmakers in the Eastern Bloc explored nuclear anxiety in their work</li>
+                <li>Scout and consider films, negotiate rights with distributors, producers, and archives</li>
+                <li>Plan and coordinate Q&amp;As and panel discussions</li>
+                <li>Coordinate filmmakers' travel to London to attend the film screenings</li>
+                <li>Write web copy and programme notes</li>
+                <li>Work closely with the marketing team to develop relevant promo campaigns</li>
+                <li>Introduce screenings, moderate Q&amp;As and do occasional public speaking to promote film seasons</li>
+              </ul>
+            </article>
+
+            <!-- Job 8 -->
+            <article class="job-item" data-job-id="job-8">
+              <div class="job-controls">
+                <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+                <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+                <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+                <button class="ctrl-btn btn-job-page" title="Move Job to Page 1">⇄ Page 1</button>
+                <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+                <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+              </div>
+              <div class="job-header-line">
+                <span class="job-company" contenteditable="true" spellcheck="false">Cambridge Film Festival</span>
+                <span class="job-date" contenteditable="true" spellcheck="false">2023 – Present</span>
+              </div>
+              <div class="job-title" contenteditable="true" spellcheck="false">Freelance Film Programmer</div>
+              <ul class="job-bullets" contenteditable="true" spellcheck="false">
+                <li>Work closely with the Programming panel to curate the festival programme</li>
+                <li>Oversee the curation of the Environmental strand</li>
+                <li>Write copy for the festival brochure</li>
+                <li>Host film introductions and Q&amp;As during the festival and give interviews to proote the festival</li>
+              </ul>
+            </article>
+          <article class="job-item">
+        <div class="job-controls">
+          <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+          <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+          <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+          <button class="ctrl-btn btn-job-page" title="Move Job to Page 1">⇄ Page 1</button>
+          <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+          <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+        </div>
+        <div class="job-header-line">
+          <span class="job-company" contenteditable="true" spellcheck="false">Sheffield Doc/Fest</span>
+          <span class="job-date" contenteditable="true" spellcheck="false">2022</span>
+        </div>
+        <div class="job-title" contenteditable="true" spellcheck="false">Programme Adviser</div>
+        <ul class="job-bullets" contenteditable="true" spellcheck="false">
+          <li>Reviewed and shortlisted film submissions</li><li>Planned themes and film strands around the shortlisted films</li><li>Hosted film introductions and Q&amp;As during the festival</li>
+        </ul>
+      </article></div>
+
+          <button class="btn-add-job" title="Add a new job entry to this section">+ Add Job</button>
+        </section><section class="cv-section" data-section-id="education">
+          <div class="cv-section-controls">
+            <span class="ctrl-btn drag-handle" title="Drag to reorder section">⠿ Move</span>
+            <button class="ctrl-btn btn-sec-up" title="Move Section Up">▲</button>
+            <button class="ctrl-btn btn-sec-down" title="Move Section Down">▼</button>
+            <button class="ctrl-btn btn-sec-page" title="Move Section to Page 1">⇄ Page 1</button>
+          </div>
+          <h2 class="section-heading" contenteditable="true" spellcheck="false">Education</h2>
+          <ul class="clean-list" contenteditable="true" spellcheck="false">
+            <li><strong>MA Ethnographic and Documentary Filmmaking</strong> — UCL</li>
+            <li><strong>BA Film Studies</strong> — King's College London</li>
+          </ul>
+        </section>
+
+        <!-- CAMERAS, SOFTWARE & LANGUAGES -->
+        <section class="cv-section" data-section-id="skills-languages">
+          <div class="cv-section-controls">
+            <span class="ctrl-btn drag-handle" title="Drag to reorder section">⠿ Move</span>
+            <button class="ctrl-btn btn-sec-up" title="Move Section Up">▲</button>
+            <button class="ctrl-btn btn-sec-down" title="Move Section Down">▼</button>
+            <button class="ctrl-btn btn-sec-page" title="Move Section to Page 1">⇄ Page 1</button>
+          </div>
+          <div class="columns-2">
+            <div class="col-section">
+              <h2 class="section-heading" contenteditable="true" spellcheck="false">Cameras and Software</h2>
+              <ul class="clean-list" contenteditable="true" spellcheck="false">
+                <li><strong>Adobe Creative Cloud:</strong> Premiere Pro, Photoshop, Audition</li>
+                <li><strong>Camera experience:</strong> Sony A7s II, Blackmagic URSA Broadcast G2</li>
+              </ul>
+            </div>
+
+            <div class="col-section">
+              <h2 class="section-heading" contenteditable="true" spellcheck="false">Languages</h2>
+              <ul class="clean-list" contenteditable="true" spellcheck="false">
+                <li><strong>Bulgarian:</strong> Native</li>
+                <li><strong>English:</strong> Fluent</li>
+                <li><strong>Italian:</strong> B1</li>
+                <li><strong>Russian:</strong> A2</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- PAGE 3: COVER LETTER -->
+    <div class="cv-page cover-letter-page" id="page3">
+
+      <!-- Header Matching CV Style -->
+      <header class="header-top">
+        <div class="name-block">
+          <span class="candidate-name" contenteditable="true" spellcheck="false">TEODOSIA</span>
+          <span class="candidate-name" contenteditable="true" spellcheck="false">DOBRIYANOVA</span>
+        </div>
+        <div class="candidate-role" contenteditable="true" spellcheck="false">VIDEO PRODUCER</div>
+      </header>
+
+      <!-- Divider Line Above Contact -->
+      <hr class="divider-rule">
+
+      <!-- Contact Bar -->
+      <div class="contact-bar">
+        <a class="contact-item" href="tel:+447514220976">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+          <span contenteditable="true" spellcheck="false">+447514220976</span>
+        </a>
+        <a class="contact-item" href="mailto:tdobriyanova@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+          <span contenteditable="true" spellcheck="false">tdobriyanova@gmail.com</span>
+        </a>
+        <span class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+          <span contenteditable="true" spellcheck="false">London, UK</span>
+        </span>
+      </div>
+
+      <!-- Divider Line Below Contact -->
+      <hr class="divider-rule" style="margin-bottom: 12px;">
+
+      <!-- Cover Letter Content -->
+      <div class="cl-content">
+        <p class="cl-salutation" contenteditable="true" spellcheck="false">Dear Guardian team,</p>
+
+        <p class="cl-paragraph" contenteditable="true" spellcheck="false">I am delighted to be applying for the Digital Journalist Scheme – video, audio and pictures pathway. I am particularly drawn to this role as it merges my experience in video journalism and filmmaking with my ambition to learn more about the profession and expand my expertise.&nbsp;&nbsp;</p>
+
+        <p class="cl-paragraph" contenteditable="true" spellcheck="false">I was trained in ethnographic and documentary filmmaking where I first cut my teeth in factual storytelling and the ethical approaches and responsibilities around filming people and documenting their stories. What attracted me to documentaries in the first place was the connection to the world and to others that the camera facilitates, as well as the possibilities to tell the stories that feel important.</p>
+
+        <p class="cl-paragraph" contenteditable="true" spellcheck="false">After graduation, I worked with the Multimedia Anthropology Lab at UCL as a video producer where I was part of a collaborative project that documented accounts of gender-based violence in Brazil’s Guarani-Kaiowá community. We worked with audio testimonies and video footage filmed by the participants. The project coincided with an installation I directed in Bulgaria which also focussed on the stories of survivors of violence, and merged audio with animations in an interactive web-based environment.</p>
+
+        <p class="cl-paragraph" contenteditable="true" spellcheck="false">Between 2021 and 2026, I spent five years as a video journalist at Mashable where I worked across climate change and sustainability, tech, current events, culture, and entertainment. I was an all-round video producer pitching and researching stories, sourcing and conducting interviews, filming on location, and editing. I got to tell stories about floods in Sudan and flood adaptation in China, heatwaves in Europe and the UK, the wars in Ukraine and Gaza, online disinformation, the rise of online prediction markets, and more. Although I focussed predominantly on video journalism, I also pitched and wrote occasional articles. I will leave a link of sources to these stories at the end of my cover letter.</p>
+
+        <p class="cl-paragraph" contenteditable="true" spellcheck="false">At Mashable, I worked on pre-existing video series but also developed my own, including <a href="https://mashable.com/shows/mashable-now" target="_blank" rel="noopener">Mashable Now</a>, which aimed to focus on current events through Mashable’s tech and digital culture lens, and <a href="https://mashable.com/shows/how-to-change-a-city" target="_blank" rel="noopener">How to Change a City</a> – an urban design series looking at ways to make cities more sustainable and equitable.</p>
+
+        <p class="cl-paragraph" contenteditable="true" spellcheck="false">I developed a particular interest in climate change and came to realise that the topic is insufficiently covered in the media landscape of my country of origin, Bulgaria. I co-created an oline platform called <a href="https://www.instagram.com/weareplanet.a/" target="_blank" rel="noopener">Planet A</a> where we tried to deliver climate change news and awareness to online audiences through accessible explainers in Bulgarian. Growing slowly but surely, we attracted local collaborators such as Greenpeace Bulgaria and Klimateka – a community of climate scientists who were trying to adopt their studies into easily digestible articles. The team behind Klimateka felt that they weren’t succeeding at abandoning the academic language, and so we worked with them to translate their findings in a way that would feel accessible to readers outside of the scientific community.</p>
+
+        <p class="cl-paragraph" contenteditable="true" spellcheck="false">As I have no formal training in journalism, Mashable was my journalism school. I was mentored by some incredible editors and colleagues and learned a lot about the work. But I am strongly convinced that I would benefit immensely from a training scheme like this one, where I can receive structured training while at the same time also further develop my practical experience. As an avid Guardian reader, I am excited by the opportunity to learn from some of the UK’s most talented journalists, and work across video, podcasts, pictures, and more. As someone with a broad range of interests and an interdisciplinary background, it is important to me to work in a dynamic and varied environment where a multimedia approach is encouraged.</p>
+
+        <div class="cl-signoff">
+          <p class="cl-closing" contenteditable="true" spellcheck="false">Sincerely yours,</p>
+          <p class="cl-signature-name" contenteditable="true" spellcheck="false">Teodosia Dobriyanova</p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="cl-links-section">
+          <h3 class="cl-links-title" contenteditable="true" spellcheck="false">Links to previous work:</h3>
+          <div class="cl-links-grid">
+            <div class="cl-links-col">
+              <div class="cl-link-group-heading" contenteditable="true" spellcheck="false">Video:</div>
+              <ul class="cl-link-list">
+                <li><a href="https://mashable.com/video/sponge-cities-urban-flooding-climate-crisis" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">In a race against extreme floods, some cities look to nature</a></li>
+                <li><a href="https://mashable.com/video/south-sudan-floods-world-newest-country-climate-crisis" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">Why is the world's newest country facing an existential threat?</a></li>
+                <li><a href="https://mashable.com/video/heatwave-wildfires-europe-climate-global-warming-faster" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">A climate scientist explains the record-breaking heatwave engulfing Europe</a></li>
+                <li><a href="https://mashable.com/video/ukraine-ai-crimean-tatar-endangered-language-recognition-respeecher" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">AI could help save a threatened language by adding it to your phone</a></li>
+                <li><a href="https://mashable.com/video/ukraine-villages-war-digital-tool-rural-architecture-balbek-bureau" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">The digital tool protecting Ukrainian architecture from war</a></li>
+                <li><a href="https://mashable.com/video/prediction-markets-polymarket-kalshi-betting-nuclear-war" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">How online prediction markets got people betting on nuclear war</a></li>
+                <li><a href="https://mashable.com/video/romcoms-bdsm-cinema-babygirl-pillion" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">How romcoms made kink mainstream</a></li>
+              </ul>
+            </div>
+            <div class="cl-links-col">
+              <div class="cl-link-group-heading" contenteditable="true" spellcheck="false">Articles:</div>
+              <ul class="cl-link-list">
+                <li><a href="https://mashable.com/article/ukraine-russia-censorship-torrents-of-truth" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">The people using torrents to talk to Russians about the war</a>,</li>
+                <li><a href="https://mashable.com/video/iphone-motherboard-victoria-mapplebeck-documentary-interview" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">How 6 generations of iPhone captured 20 years of motherhood in 'Motherboard'</a></li>
+                <li><a href="https://mashable.com/article/the-brutalist-ai-controversy" target="_blank" rel="noopener" contenteditable="true" spellcheck="false">'The Brutalist' AI backlash, explained</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Interactive Logic: Section/Job Reordering, Formatting, Scaler, LocalStorage, Print & Export -->
+  <script>
+    // localStorage can throw (private mode, some file:// setups) – never let that break the editor
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+      remove(k) { try { localStorage.removeItem(k); } catch (e) {} }
+    };
+
+    const cvWrapper = document.getElementById('cvWrapper');
+    const bgColorPicker = document.getElementById('bgColorPicker');
+    const swatchBtns = document.querySelectorAll('.swatch-btn');
+    const toggleFrameBtn = document.getElementById('toggleFrameBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const downloadHtmlBtn = document.getElementById('downloadHtmlBtn');
+    const saveStatus = document.getElementById('saveStatus');
+    const canvasThemeBtn = document.getElementById('canvasThemeBtn');
+    const scaleDisplay = document.getElementById('scaleDisplay');
+    const scaleUpBtn = document.getElementById('scaleUpBtn');
+    const scaleDownBtn = document.getElementById('scaleDownBtn');
+    const scaleResetBtn = document.getElementById('scaleResetBtn');
+
+    // Floating toolbar elements
+    const floatingToolbar = document.getElementById('floatingToolbar');
+    const ftBoldBtn = document.getElementById('ftBoldBtn');
+    const ftItalicBtn = document.getElementById('ftItalicBtn');
+    const ftUnderlineBtn = document.getElementById('ftUnderlineBtn');
+    const ftSizeDownBtn = document.getElementById('ftSizeDownBtn');
+    const ftSizeUpBtn = document.getElementById('ftSizeUpBtn');
+    const ftSize11Btn = document.getElementById('ftSize11Btn');
+    const ftSize13Btn = document.getElementById('ftSize13Btn');
+    const ftClearBtn = document.getElementById('ftClearBtn');
+
+    // Top action bar formatting buttons
+    const barBoldBtn = document.getElementById('barBoldBtn');
+    const barItalicBtn = document.getElementById('barItalicBtn');
+    const barUnderlineBtn = document.getElementById('barUnderlineBtn');
+    const barSizeDownBtn = document.getElementById('barSizeDownBtn');
+    const barSizeUpBtn = document.getElementById('barSizeUpBtn');
+
+    // Drop indicator line
+    const dropIndicator = document.getElementById('dropIndicator');
+
+    let saveTimeout;
+    let noticeTimeout;
+    let isFramed = false;
+    let currentScale = 1.0;
+
+    // --- CV Text Sizing / Scaler ---
+    function setCvScale(scale) {
+      currentScale = Math.round(scale * 1000) / 1000;
+      currentScale = Math.max(0.75, Math.min(1.35, currentScale));
+      document.documentElement.style.setProperty('--cv-scale', currentScale);
+      scaleDisplay.textContent = Math.round(currentScale * 100) + '%';
+      store.set('tedi_cv_scale_v2', currentScale.toString());
+      showAutoSaveNotice();
+    }
+
+    scaleDownBtn.addEventListener('click', () => setCvScale(currentScale - 0.025));
+    scaleUpBtn.addEventListener('click', () => setCvScale(currentScale + 0.025));
+    scaleResetBtn.addEventListener('click', () => setCvScale(1.0));
+
+    // --- Canvas Theme Toggle ---
+    function setCanvasTheme(isDark) {
+      document.body.classList.toggle('canvas-dark', isDark);
+      canvasThemeBtn.innerHTML = isDark ? 'Canvas: Black ⚫' : 'Canvas: White ⚪';
+      store.set('tedi_cv_canvas_theme_v2', isDark ? 'dark' : 'white');
+    }
+
+    canvasThemeBtn.addEventListener('click', () => {
+      const isDark = !document.body.classList.contains('canvas-dark');
+      setCanvasTheme(isDark);
+    });
+
+    // --- Page Background Color ---
+    function setPageColor(color) {
+      document.documentElement.style.setProperty('--page-bg', color);
+      bgColorPicker.value = color.startsWith('#') && color.length === 7 ? color : '#edf2ee';
+
+      swatchBtns.forEach(btn => {
+        if (btn.getAttribute('data-color').toLowerCase() === color.toLowerCase()) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      store.set('tedi_cv_bg_color_v2', color);
+      showAutoSaveNotice();
+    }
+
+    bgColorPicker.addEventListener('input', (e) => setPageColor(e.target.value));
+
+    swatchBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const color = btn.getAttribute('data-color');
+        setPageColor(color);
+      });
+    });
+
+    // --- Frame Border Toggle ---
+    toggleFrameBtn.addEventListener('click', () => {
+      isFramed = !isFramed;
+      document.querySelectorAll('.cv-page').forEach(page => {
+        page.classList.toggle('framed', isFramed);
+      });
+      toggleFrameBtn.textContent = `Frame: ${isFramed ? 'On' : 'Off'}`;
+      store.set('tedi_cv_framed_v2', isFramed ? 'true' : 'false');
+      showAutoSaveNotice();
+    });
+
+    // --- Auto-Save Notification & Logic ---
+    function showAutoSaveNotice() {
+      saveStatus.style.opacity = '1';
+      clearTimeout(noticeTimeout);
+      noticeTimeout = setTimeout(() => {
+        saveStatus.style.opacity = '0';
+      }, 1400);
+    }
+
+    // Fingerprint of the content this file was opened with. Saved edits are only restored
+    // into the same file version, so amending the HTML (or opening an exported copy)
+    // always shows the file's own up-to-date content instead of a stale browser copy.
+    function hashString(str) {
+      let h = 5381;
+      for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0;
+      return (h >>> 0).toString(36);
+    }
+    const fileFingerprint = hashString(cvWrapper.innerHTML);
+
+    function flushCvContent() {
+      clearTimeout(saveTimeout);
+      saveTimeout = null;
+      store.set('tedi_cv_content_v3', cvWrapper.innerHTML);
+      store.set('tedi_cv_content_base_v3', fileFingerprint);
+    }
+
+    function saveCvContent() {
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => {
+        flushCvContent();
+        showAutoSaveNotice();
+      }, 400);
+    }
+
+    cvWrapper.addEventListener('input', () => saveCvContent());
+
+    function flashElement(el) {
+      if (!el) return;
+      el.classList.remove('item-flash');
+      void el.offsetWidth;
+      el.classList.add('item-flash');
+    }
+
+    // --- Section & Job Movement Logic ---
+    function moveSectionUp(sec) {
+      const prev = sec.previousElementSibling;
+      if (prev && prev.classList.contains('cv-section')) {
+        sec.parentNode.insertBefore(sec, prev);
+        flashElement(sec);
+        saveCvContent();
+      }
+    }
+
+    function moveSectionDown(sec) {
+      const next = sec.nextElementSibling;
+      if (next && next.classList.contains('cv-section')) {
+        sec.parentNode.insertBefore(next, sec);
+        flashElement(sec);
+        saveCvContent();
+      }
+    }
+
+    function moveSectionToOtherPage(sec) {
+      const curPage = sec.closest('.cv-page');
+      const targetPageId = curPage.id === 'page1' ? 'page2' : 'page1';
+      const targetArea = document.querySelector(`#${targetPageId} .page-content-area`);
+      if (targetArea) {
+        targetArea.appendChild(sec);
+        updateSectionPageButtons();
+        flashElement(sec);
+        saveCvContent();
+        sec.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function moveJobUp(job) {
+      const prev = job.previousElementSibling;
+      if (prev && prev.classList.contains('job-item')) {
+        job.parentNode.insertBefore(job, prev);
+        flashElement(job);
+        saveCvContent();
+      }
+    }
+
+    function moveJobDown(job) {
+      const next = job.nextElementSibling;
+      if (next && next.classList.contains('job-item')) {
+        job.parentNode.insertBefore(next, job);
+        flashElement(job);
+        saveCvContent();
+      }
+    }
+
+    function moveJobToOtherPage(job) {
+      const curPage = job.closest('.cv-page');
+      const targetPageId = curPage.id === 'page1' ? 'page2' : 'page1';
+      let targetContainer = document.querySelector(`#${targetPageId} .jobs-container`);
+      
+      if (!targetContainer) {
+        const targetArea = document.querySelector(`#${targetPageId} .page-content-area`);
+        const newSec = document.createElement('section');
+        newSec.className = 'cv-section';
+        newSec.setAttribute('data-section-id', targetPageId === 'page1' ? 'work-p1' : 'work-p2');
+        newSec.innerHTML = `
+          <div class="cv-section-controls">
+            <span class="ctrl-btn drag-handle" title="Drag to reorder section">⠿ Move</span>
+            <button class="ctrl-btn btn-sec-up" title="Move Section Up">▲</button>
+            <button class="ctrl-btn btn-sec-down" title="Move Section Down">▼</button>
+            <button class="ctrl-btn btn-sec-page" title="Move Section">⇄ Page</button>
+          </div>
+          <h2 class="section-heading" contenteditable="true" spellcheck="false">${targetPageId === 'page1' ? 'Work Experience' : 'Work Experience (Continued)'}</h2>
+          <div class="jobs-container"></div>
+          <button class="btn-add-job" title="Add a new job entry to this section">+ Add Job</button>
+        `;
+        targetArea.insertBefore(newSec, targetArea.firstChild);
+        targetContainer = newSec.querySelector('.jobs-container');
+      }
+
+      if (curPage.id === 'page1') {
+        targetContainer.insertBefore(job, targetContainer.firstChild);
+      } else {
+        targetContainer.appendChild(job);
+      }
+
+      updateJobPageButtons();
+      flashElement(job);
+      saveCvContent();
+      job.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function addNewJob(container, afterElement) {
+      const newJob = document.createElement('article');
+      newJob.className = 'job-item';
+      const pageId = container.closest('.cv-page').id;
+      const targetPageName = pageId === 'page1' ? 'Page 2' : 'Page 1';
+
+      newJob.innerHTML = `
+        <div class="job-controls">
+          <span class="ctrl-btn drag-handle" title="Drag to reorder job">⠿</span>
+          <button class="ctrl-btn btn-job-up" title="Move Job Up">▲</button>
+          <button class="ctrl-btn btn-job-down" title="Move Job Down">▼</button>
+          <button class="ctrl-btn btn-job-page" title="Move Job to ${targetPageName}">⇄ ${targetPageName}</button>
+          <button class="ctrl-btn btn-job-add" title="Add Job Below">+</button>
+          <button class="ctrl-btn btn-delete btn-job-del" title="Delete Job">✕</button>
+        </div>
+        <div class="job-header-line">
+          <span class="job-company" contenteditable="true" spellcheck="false">New Company / Production</span>
+          <span class="job-date" contenteditable="true" spellcheck="false">(2024 – Present)</span>
+        </div>
+        <div class="job-title" contenteditable="true" spellcheck="false">Producer / Director</div>
+        <ul class="job-bullets" contenteditable="true" spellcheck="false">
+          <li>Key accomplishment, production highlight, or core responsibility.</li>
+        </ul>
+      `;
+
+      if (afterElement && afterElement.nextSibling) {
+        container.insertBefore(newJob, afterElement.nextSibling);
+      } else {
+        container.appendChild(newJob);
+      }
+
+      flashElement(newJob);
+      saveCvContent();
+      const comp = newJob.querySelector('.job-company');
+      if (comp) comp.focus();
+    }
+
+    function updateSectionPageButtons() {
+      document.querySelectorAll('.cv-section').forEach(sec => {
+        const page = sec.closest('.cv-page');
+        const btn = sec.querySelector('.btn-sec-page');
+        if (btn && page) {
+          btn.textContent = page.id === 'page1' ? '⇄ Page 2' : '⇄ Page 1';
+          btn.title = page.id === 'page1' ? 'Move Section to Page 2' : 'Move Section to Page 1';
+        }
+      });
+    }
+
+    function updateJobPageButtons() {
+      document.querySelectorAll('.job-item').forEach(job => {
+        const page = job.closest('.cv-page');
+        const btn = job.querySelector('.btn-job-page');
+        if (btn && page) {
+          btn.textContent = page.id === 'page1' ? '⇄ Page 2' : '⇄ Page 1';
+          btn.title = page.id === 'page1' ? 'Move Job to Page 2' : 'Move Job to Page 1';
+        }
+      });
+    }
+
+    // Delegated click handler for section and job buttons
+    cvWrapper.addEventListener('click', (e) => {
+      const btn = e.target.closest('button, .ctrl-btn');
+      if (!btn) return;
+
+      if (btn.classList.contains('btn-sec-up')) {
+        moveSectionUp(btn.closest('.cv-section'));
+      } else if (btn.classList.contains('btn-sec-down')) {
+        moveSectionDown(btn.closest('.cv-section'));
+      } else if (btn.classList.contains('btn-sec-page')) {
+        moveSectionToOtherPage(btn.closest('.cv-section'));
+      } else if (btn.classList.contains('btn-job-up')) {
+        moveJobUp(btn.closest('.job-item'));
+      } else if (btn.classList.contains('btn-job-down')) {
+        moveJobDown(btn.closest('.job-item'));
+      } else if (btn.classList.contains('btn-job-page')) {
+        moveJobToOtherPage(btn.closest('.job-item'));
+      } else if (btn.classList.contains('btn-job-add')) {
+        const job = btn.closest('.job-item');
+        addNewJob(job.parentNode, job);
+      } else if (btn.classList.contains('btn-job-del')) {
+        const job = btn.closest('.job-item');
+        if (confirm('Delete this job entry?')) {
+          job.remove();
+          saveCvContent();
+        }
+      } else if (btn.classList.contains('btn-add-job')) {
+        const sec = btn.closest('.cv-section');
+        const container = sec.querySelector('.jobs-container');
+        if (container) addNewJob(container, null);
+      }
+    });
+
+    // --- Drag and Drop Logic ---
+    let draggedEl = null;
+    let dropTarget = null;
+    let dropPosition = null;
+
+    cvWrapper.addEventListener('mousedown', (e) => {
+      const handle = e.target.closest('.drag-handle');
+      if (handle) {
+        const item = handle.closest('.job-item, .cv-section');
+        if (item) {
+          item.setAttribute('draggable', 'true');
+        }
+      }
+    });
+
+    cvWrapper.addEventListener('mouseup', () => {
+      document.querySelectorAll('[draggable="true"]').forEach(el => el.setAttribute('draggable', 'false'));
+    });
+
+    cvWrapper.addEventListener('dragstart', (e) => {
+      const item = e.target.closest('.job-item, .cv-section');
+      if (!item) return;
+      draggedEl = item;
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', '');
+      setTimeout(() => item.classList.add('is-dragging'), 0);
+    });
+
+    cvWrapper.addEventListener('dragover', (e) => {
+      if (!draggedEl) return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+
+      if (draggedEl.classList.contains('job-item')) {
+        const targetJob = e.target.closest('.job-item');
+        const jobsContainer = e.target.closest('.jobs-container');
+
+        if (targetJob && targetJob !== draggedEl) {
+          dropTarget = targetJob;
+          const rect = targetJob.getBoundingClientRect();
+          dropPosition = e.clientY < (rect.top + rect.height / 2) ? 'before' : 'after';
+          showDropIndicator(rect.left, dropPosition === 'before' ? rect.top : rect.bottom, rect.width);
+        } else if (jobsContainer && !jobsContainer.contains(draggedEl)) {
+          dropTarget = jobsContainer;
+          dropPosition = 'append';
+          const rect = jobsContainer.getBoundingClientRect();
+          showDropIndicator(rect.left, rect.bottom, rect.width);
+        }
+      } else if (draggedEl.classList.contains('cv-section')) {
+        const targetSec = e.target.closest('.cv-section');
+        const contentArea = e.target.closest('.page-content-area');
+
+        if (targetSec && targetSec !== draggedEl) {
+          dropTarget = targetSec;
+          const rect = targetSec.getBoundingClientRect();
+          dropPosition = e.clientY < (rect.top + rect.height / 2) ? 'before' : 'after';
+          showDropIndicator(rect.left, dropPosition === 'before' ? rect.top : rect.bottom, rect.width);
+        } else if (contentArea && !contentArea.contains(draggedEl)) {
+          dropTarget = contentArea;
+          dropPosition = 'append';
+          const rect = contentArea.getBoundingClientRect();
+          showDropIndicator(rect.left, rect.bottom, rect.width);
+        }
+      }
+    });
+
+    function showDropIndicator(left, top, width) {
+      dropIndicator.style.display = 'block';
+      dropIndicator.style.width = `${width}px`;
+      dropIndicator.style.left = `${left}px`;
+      dropIndicator.style.top = `${top + window.scrollY}px`;
+    }
+
+    cvWrapper.addEventListener('drop', (e) => {
+      if (!draggedEl || !dropTarget) return;
+      e.preventDefault();
+
+      if (dropPosition === 'before') {
+        dropTarget.parentNode.insertBefore(draggedEl, dropTarget);
+      } else if (dropPosition === 'after') {
+        dropTarget.parentNode.insertBefore(draggedEl, dropTarget.nextSibling);
+      } else if (dropPosition === 'append') {
+        dropTarget.appendChild(draggedEl);
+      }
+
+      updateSectionPageButtons();
+      updateJobPageButtons();
+      flashElement(draggedEl);
+      saveCvContent();
+      cleanupDrag();
+    });
+
+    cvWrapper.addEventListener('dragend', () => cleanupDrag());
+
+    function cleanupDrag() {
+      if (draggedEl) {
+        draggedEl.classList.remove('is-dragging');
+        draggedEl.setAttribute('draggable', 'false');
+        draggedEl = null;
+      }
+      dropTarget = null;
+      dropPosition = null;
+      dropIndicator.style.display = 'none';
+    }
+
+    // --- Rich Text Formatting & Font Sizing ---
+    function formatText(cmd, val = null) {
+      document.execCommand(cmd, false, val);
+      saveCvContent();
+      updateFormatToolbarStates();
+    }
+
+    function changeSelectionFontSize(delta) {
+      const sel = window.getSelection();
+      if (!sel.rangeCount) return;
+      const range = sel.getRangeAt(0);
+
+      let targetNode = range.commonAncestorContainer;
+      if (targetNode.nodeType === 3) targetNode = targetNode.parentElement;
+      const curSize = parseFloat(window.getComputedStyle(targetNode).fontSize) || 11;
+      const newSize = Math.max(8, Math.min(48, Math.round(curSize + delta)));
+      setSelectionFontSize(newSize);
+    }
+
+    function setSelectionFontSize(sizePx) {
+      const sel = window.getSelection();
+      if (!sel.rangeCount) return;
+      
+      if (sel.isCollapsed) {
+        let node = sel.anchorNode;
+        if (node.nodeType === 3) node = node.parentElement;
+        node.style.fontSize = sizePx + 'px';
+        saveCvContent();
+        return;
+      }
+
+      document.execCommand('fontSize', false, '7');
+      const fontEls = document.querySelectorAll('font[size="7"]');
+      fontEls.forEach(fontEl => {
+        const span = document.createElement('span');
+        span.style.fontSize = sizePx + 'px';
+        span.innerHTML = fontEl.innerHTML;
+        fontEl.parentNode.replaceChild(span, fontEl);
+      });
+      saveCvContent();
+    }
+
+    function preventBlur(btn) {
+      btn.addEventListener('mousedown', (e) => e.preventDefault());
+    }
+
+    [
+      ftBoldBtn, ftItalicBtn, ftUnderlineBtn, ftSizeDownBtn, ftSizeUpBtn, ftSize11Btn, ftSize13Btn, ftClearBtn,
+      barBoldBtn, barItalicBtn, barUnderlineBtn, barSizeDownBtn, barSizeUpBtn
+    ].forEach(preventBlur);
+
+    // Floating toolbar events
+    ftBoldBtn.addEventListener('click', () => formatText('bold'));
+    ftItalicBtn.addEventListener('click', () => formatText('italic'));
+    ftUnderlineBtn.addEventListener('click', () => formatText('underline'));
+    ftSizeDownBtn.addEventListener('click', () => changeSelectionFontSize(-1));
+    ftSizeUpBtn.addEventListener('click', () => changeSelectionFontSize(1));
+    ftSize11Btn.addEventListener('click', () => setSelectionFontSize(11));
+    ftSize13Btn.addEventListener('click', () => setSelectionFontSize(13));
+    ftClearBtn.addEventListener('click', () => formatText('removeFormat'));
+
+    // Top action bar formatting events
+    barBoldBtn.addEventListener('click', () => formatText('bold'));
+    barItalicBtn.addEventListener('click', () => formatText('italic'));
+    barUnderlineBtn.addEventListener('click', () => formatText('underline'));
+    barSizeDownBtn.addEventListener('click', () => changeSelectionFontSize(-1));
+    barSizeUpBtn.addEventListener('click', () => changeSelectionFontSize(1));
+
+    function updateFormatToolbarStates() {
+      const isB = document.queryCommandState('bold');
+      const isI = document.queryCommandState('italic');
+      const isU = document.queryCommandState('underline');
+
+      ftBoldBtn.classList.toggle('active', isB);
+      ftItalicBtn.classList.toggle('active', isI);
+      ftUnderlineBtn.classList.toggle('active', isU);
+
+      barBoldBtn.classList.toggle('active', isB);
+      barItalicBtn.classList.toggle('active', isI);
+      barUnderlineBtn.classList.toggle('active', isU);
+    }
+
+    // Show/Hide Floating Toolbar on Text Selection
+    document.addEventListener('selectionchange', () => {
+      const sel = window.getSelection();
+      if (!sel.rangeCount || sel.isCollapsed || !cvWrapper.contains(sel.anchorNode)) {
+        floatingToolbar.style.display = 'none';
+        updateFormatToolbarStates();
+        return;
+      }
+
+      const text = sel.toString().trim();
+      if (text.length === 0) {
+        floatingToolbar.style.display = 'none';
+        return;
+      }
+
+      const range = sel.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        floatingToolbar.style.display = 'flex';
+        floatingToolbar.style.left = `${Math.max(120, Math.min(window.innerWidth - 120, rect.left + rect.width / 2))}px`;
+        floatingToolbar.style.top = `${rect.top - 6}px`;
+        updateFormatToolbarStates();
+      }
+    });
+
+    // --- Page Jump Shortcuts ---
+    const jumpP1Btn = document.getElementById('jumpP1Btn');
+    const jumpP2Btn = document.getElementById('jumpP2Btn');
+    const jumpP3Btn = document.getElementById('jumpP3Btn');
+
+    if (jumpP1Btn) {
+      jumpP1Btn.addEventListener('click', () => {
+        const p1 = document.getElementById('page1');
+        if (p1) p1.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    if (jumpP2Btn) {
+      jumpP2Btn.addEventListener('click', () => {
+        const p2 = document.getElementById('page2');
+        if (p2) p2.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    if (jumpP3Btn) {
+      jumpP3Btn.addEventListener('click', () => {
+        const p3 = document.getElementById('page3');
+        if (p3) p3.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    // --- Export Dropdowns & Scope Management ---
+    const exportScopeSelect = document.getElementById('exportScopeSelect');
+    const downloadMenu = document.getElementById('downloadMenu');
+    const printMenu = document.getElementById('printMenu');
+    const printBtn = document.getElementById('printBtn');
+
+    function closeDropdowns() {
+      if (downloadMenu) downloadMenu.classList.remove('show');
+      if (printMenu) printMenu.classList.remove('show');
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown-container')) {
+        closeDropdowns();
+      }
+    });
+
+    if (downloadHtmlBtn) {
+      downloadHtmlBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (printMenu) printMenu.classList.remove('show');
+        downloadMenu.classList.toggle('show');
+      });
+    }
+
+    if (printBtn) {
+      printBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (downloadMenu) downloadMenu.classList.remove('show');
+        printMenu.classList.toggle('show');
+      });
+    }
+
+    // Dropdown direct action buttons
+    document.getElementById('dlBothBtn')?.addEventListener('click', () => {
+      closeDropdowns();
+      downloadHtml('both');
+    });
+    document.getElementById('dlCvBtn')?.addEventListener('click', () => {
+      closeDropdowns();
+      downloadHtml('cv');
+    });
+    document.getElementById('dlClBtn')?.addEventListener('click', () => {
+      closeDropdowns();
+      downloadHtml('cover-letter');
+    });
+
+    document.getElementById('prBothBtn')?.addEventListener('click', () => {
+      closeDropdowns();
+      prepareAndPrint('both');
+    });
+    document.getElementById('prCvBtn')?.addEventListener('click', () => {
+      closeDropdowns();
+      prepareAndPrint('cv');
+    });
+    document.getElementById('prClBtn')?.addEventListener('click', () => {
+      closeDropdowns();
+      prepareAndPrint('cover-letter');
+    });
+
+    // --- Reset All Button ---
+    resetBtn.addEventListener('click', () => {
+      if (confirm('Revert all document text edits, reorderings, font scaling, and color preferences back to original?')) {
+        clearTimeout(saveTimeout);
+        saveTimeout = null;
+        store.remove('tedi_cv_content_v3');
+        store.remove('tedi_cv_content_base_v3');
+        store.remove('tedi_cv_content_v2');
+        store.remove('tedi_cv_html_content');
+        store.remove('tedi_cv_bg_color_v2');
+        store.remove('tedi_cv_bg_color');
+        store.remove('tedi_cv_framed_v2');
+        store.remove('tedi_cv_framed');
+        store.remove('tedi_cv_canvas_theme_v2');
+        store.remove('tedi_cv_canvas_theme');
+        store.remove('tedi_cv_scale_v2');
+        location.reload();
+      }
+    });
+
+    // Top-level nodes that belong to this file; anything else was injected by browser extensions
+    const ownHeadNodes = new Set(document.head.children);
+    const ownBodyNodes = new Set(document.body.children);
+
+    function stripForeignNodes(liveParent, cloneParent, ownNodes) {
+      const liveKids = Array.from(liveParent.children);
+      const cloneKids = Array.from(cloneParent.children);
+      liveKids.forEach((el, i) => {
+        if (!ownNodes.has(el) && cloneKids[i]) cloneKids[i].remove();
+      });
+    }
+
+    // --- Download Updated HTML File ---
+    function downloadHtml(scope) {
+      if (!scope) {
+        scope = exportScopeSelect ? exportScopeSelect.value : 'both';
+      }
+      if (document.activeElement) document.activeElement.blur();
+      floatingToolbar.style.display = 'none';
+      dropIndicator.style.display = 'none';
+      closeDropdowns();
+      flushCvContent();
+
+      // Clone document to prepare clean standalone file (editor UI stays so the copy remains editable)
+      const clone = document.documentElement.cloneNode(true);
+      stripForeignNodes(document.head, clone.querySelector('head'), ownHeadNodes);
+      stripForeignNodes(document.body, clone.querySelector('body'), ownBodyNodes);
+      clone.querySelectorAll('.is-dragging, .item-flash').forEach(el => el.classList.remove('is-dragging', 'item-flash'));
+      clone.querySelectorAll('[draggable="true"]').forEach(el => el.setAttribute('draggable', 'false'));
+      const cloneFt = clone.querySelector('#floatingToolbar');
+      if (cloneFt) cloneFt.removeAttribute('style');
+      const cloneDi = clone.querySelector('#dropIndicator');
+      if (cloneDi) cloneDi.removeAttribute('style');
+
+      // Clean print override classes
+      const cloneBody = clone.querySelector('body');
+      if (cloneBody) {
+        cloneBody.classList.remove('print-cv-only', 'print-cl-only');
+      }
+
+      let filename = 'Teodosia_Dobriyanova_CV_and_CoverLetter.html';
+
+      if (scope === 'cv') {
+        filename = 'Teodosia_Dobriyanova_CV.html';
+        const cl = clone.querySelector('.cover-letter-page');
+        if (cl) cl.remove();
+        const j3 = clone.querySelector('#jumpP3Btn');
+        if (j3) j3.remove();
+        const titleEl = clone.querySelector('title');
+        if (titleEl) titleEl.textContent = 'Teodosia Dobriyanova – Video Producer CV';
+      } else if (scope === 'cover-letter') {
+        filename = 'Teodosia_Dobriyanova_CoverLetter.html';
+        const p1 = clone.querySelector('#page1');
+        if (p1) p1.remove();
+        const p2 = clone.querySelector('#page2');
+        if (p2) p2.remove();
+        const j1 = clone.querySelector('#jumpP1Btn');
+        if (j1) j1.remove();
+        const j2 = clone.querySelector('#jumpP2Btn');
+        if (j2) j2.remove();
+        const titleEl = clone.querySelector('title');
+        if (titleEl) titleEl.textContent = 'Teodosia Dobriyanova – Cover Letter';
+      } else {
+        filename = 'Teodosia_Dobriyanova_CV_and_CoverLetter.html';
+        const titleEl = clone.querySelector('title');
+        if (titleEl) titleEl.textContent = 'Teodosia Dobriyanova – CV & Cover Letter';
+      }
+
+      // Stamp the export date so you can tell versions apart
+      const stamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
+      const fileContent = '<!DOCTYPE html>\n<!-- Exported ' + stamp + ' -->\n' + clone.outerHTML;
+      const blob = new Blob([fileContent], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      // Revoking synchronously can cancel the download in Safari/Firefox
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+    }
+
+    // --- Prepare and trigger print ---
+    function prepareAndPrint(scope) {
+      if (!scope) {
+        scope = exportScopeSelect ? exportScopeSelect.value : 'both';
+      }
+      if (document.activeElement) {
+        document.activeElement.blur();
+      }
+      floatingToolbar.style.display = 'none';
+      dropIndicator.style.display = 'none';
+      closeDropdowns();
+
+      document.body.classList.remove('print-cv-only', 'print-cl-only');
+      if (scope === 'cv') {
+        document.body.classList.add('print-cv-only');
+      } else if (scope === 'cover-letter') {
+        document.body.classList.add('print-cl-only');
+      }
+
+      setTimeout(() => {
+        window.print();
+      }, 60);
+    }
+
+    window.addEventListener('beforeunload', () => {
+      if (saveTimeout) flushCvContent();
+    });
+
+    window.addEventListener('afterprint', () => {
+      document.body.classList.remove('print-cv-only', 'print-cl-only');
+    });
+
+    // --- Restore State On Page Load ---
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Canvas theme
+      const savedCanvasTheme = store.get('tedi_cv_canvas_theme_v2') || store.get('tedi_cv_canvas_theme');
+      if (savedCanvasTheme === 'dark') {
+        setCanvasTheme(true);
+      } else {
+        setCanvasTheme(false);
+      }
+
+      // 2. CV Page Background color
+      const savedColor = store.get('tedi_cv_bg_color_v2') || store.get('tedi_cv_bg_color');
+      if (savedColor) {
+        setPageColor(savedColor);
+      }
+
+      // 3. Framed preference
+      const savedFramed = store.get('tedi_cv_framed_v2') || store.get('tedi_cv_framed');
+      if (savedFramed === 'true') {
+        isFramed = true;
+        document.querySelectorAll('.cv-page').forEach(page => page.classList.add('framed'));
+        toggleFrameBtn.textContent = 'Frame: On';
+      }
+
+      // 4. Overall Text Scale
+      const savedScale = store.get('tedi_cv_scale_v2');
+      if (savedScale) {
+        setCvScale(parseFloat(savedScale));
+      }
+
+      // 5. Restore in-browser edits, but only onto the same file version they were made on
+      const savedContent = store.get('tedi_cv_content_v3');
+      const savedBase = store.get('tedi_cv_content_base_v3');
+      if (savedContent && savedBase === fileFingerprint) {
+        cvWrapper.innerHTML = savedContent;
+      }
+
+      updateSectionPageButtons();
+      updateJobPageButtons();
+    });
+  </script>
+
+
+
+</body></html>
