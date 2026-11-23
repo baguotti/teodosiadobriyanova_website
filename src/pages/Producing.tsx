@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
-import { ArrowUpRight, ChevronDown, ChevronUp, Play } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, ChevronUp, Play } from '../components/ui/Icons';
 
 interface Credit {
   label: string;
@@ -25,7 +25,7 @@ export const Producing: React.FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleExpand = (id: string) => {
-    setExpandedId(prev => (prev === id ? null : id));
+    setExpandedId((prev) => (prev === id ? null : id));
   };
 
   const projects: Project[] = [
@@ -85,75 +85,73 @@ export const Producing: React.FC = () => {
   ];
 
   return (
-    <PageWrapper
-      subtitle="Film Production & Project Management"
-      title="Producing"
-    >
-      <section className="space-y-12">
-        <div className="divide-y divide-[#F0ECE1]">
+    <PageWrapper title="Producing">
+      <section>
+        <div className="divide-y divide-canvas-subtle">
           {projects.map((project) => {
             const isExpanded = expandedId === project.id;
             return (
-              <div key={project.id} className="py-10 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12 group">
-                {/* Text Information Column */}
-                <div className="flex-1 space-y-3">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-                    <span className="text-[#A88B68] font-medium uppercase tracking-wider">{project.platform}</span>
-                    <span className="text-[#E8E3D9]">&bull;</span>
-                    <span className="text-[#75716B] font-light">{project.category}</span>
+              <article key={project.id} className="py-9 first:pt-0 flex flex-col md:flex-row items-start justify-between gap-7 md:gap-10 group">
+                <div className="flex-1 space-y-2.5">
+                  <div className="flex flex-wrap items-center gap-x-2 text-sm text-ink-muted">
+                    <span className="text-earth">{project.platform}</span>
+                    <span aria-hidden="true" className="text-border">&middot;</span>
+                    <span>{project.category}</span>
                   </div>
 
-                  <h2 className=" text-xl md:text-2xl text-[#2B2927] leading-snug">
+                  <h2 className="text-xl sm:text-2xl text-ink leading-snug">
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-[#A88B68] transition-colors inline-flex items-baseline group/link"
+                      className="hover:text-earth hover:underline decoration-earth/40 transition-colors inline-flex items-baseline gap-1.5"
                     >
                       <span>{project.title}</span>
-                      <ArrowUpRight size={15} className="ml-1.5 inline-block text-[#A88B68] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                      <ArrowUpRight size={14} className="text-earth/75 self-center" />
                     </a>
                   </h2>
 
                   {project.description && (
-                    <p className="text-sm text-[#75716B] font-light leading-relaxed max-w-xl">
+                    <p className="text-[15px] text-ink-muted leading-relaxed max-w-xl">
                       {project.description}
                     </p>
                   )}
 
-                  <div className="pt-2">
+                  <div className="pt-1">
                     <button
+                      type="button"
                       onClick={() => toggleExpand(project.id)}
-                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#75716B] hover:text-[#2B2927] transition-colors"
+                      aria-expanded={isExpanded}
+                      className="inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-ink transition-colors cursor-pointer"
                     >
-                      <span>{isExpanded ? 'Hide Full Credits' : 'View Full Credits & Details'}</span>
+                      <span>{isExpanded ? 'Hide credits' : 'Credits & details'}</span>
                       {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                     </button>
                   </div>
 
                   {isExpanded && (
-                    <div className="pt-4 border-t border-[#F0ECE1] space-y-4 max-w-xl fade-in">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-light">
-                        {project.credits.map((credit, idx) => (
-                          <div key={idx} className="flex justify-between border-b border-[#F0ECE1]/60 pb-1.5">
-                            <span className="text-[#75716B]">{credit.label}</span>
-                            <span className="text-[#2B2927] font-medium text-right ml-4">{credit.value}</span>
+                    <div className="pt-4 border-t border-canvas-subtle space-y-4 max-w-xl fade-in">
+                      <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs">
+                        {project.credits.map((credit) => (
+                          <div key={credit.label} className="flex justify-between border-b border-canvas-subtle/60 pb-1.5">
+                            <dt className="text-ink-muted">{credit.label}</dt>
+                            <dd className="text-ink font-medium text-right ml-4">{credit.value}</dd>
                           </div>
                         ))}
-                      </div>
+                      </dl>
 
                       {project.note && (
-                        <div className="bg-[#F9F7F2] p-4 rounded-lg border border-[#F0ECE1] space-y-2 text-xs text-[#75716B]">
-                          <p className="font-light leading-relaxed">{project.note}</p>
+                        <div className="bg-canvas-subtle/35 p-4 rounded-lg border border-canvas-subtle space-y-2 text-xs text-ink-muted">
+                          <p className="leading-relaxed">{project.note}</p>
                           {project.externalLinkUrl && (
                             <a
                               href={project.externalLinkUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center text-[#2B2927] hover:text-[#A88B68] font-medium transition-colors"
+                              className="inline-flex items-center text-ink hover:text-earth font-medium transition-colors gap-1"
                             >
                               <span>{project.externalLinkText}</span>
-                              <ArrowUpRight size={13} className="ml-1" />
+                              <ArrowUpRight size={14} />
                             </a>
                           )}
                         </div>
@@ -162,26 +160,27 @@ export const Producing: React.FC = () => {
                   )}
                 </div>
 
-                {/* Video Preview Thumbnail Column */}
                 {project.thumbnail && (
-                  <div className="w-full md:w-72 shrink-0">
-                    <div className="w-full aspect-[16/9] overflow-hidden rounded-xl border border-[#E8E3D9] shadow-sm relative group/thumb">
+                  <div className="w-full md:w-64 shrink-0">
+                    <div className="w-full aspect-[16/9] overflow-hidden rounded-xl border border-border shadow-xs relative group/thumb">
                       <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                         <img
                           src={project.thumbnail}
                           alt={`${project.title} Preview`}
-                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover/thumb:scale-[1.02]"
                         />
                         <div className="absolute inset-0 bg-black/10 group-hover/thumb:bg-black/25 transition-colors flex items-center justify-center">
-                          <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-[#2B2927] shadow-sm group-hover/thumb:scale-105 transition-transform">
-                            <Play size={16} className="ml-0.5 fill-current" />
+                          <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-ink shadow-xs group-hover/thumb:scale-105 transition-transform">
+                            <Play size={16} className="ml-0.5" />
                           </div>
                         </div>
                       </a>
                     </div>
                   </div>
                 )}
-              </div>
+              </article>
             );
           })}
         </div>
@@ -189,5 +188,3 @@ export const Producing: React.FC = () => {
     </PageWrapper>
   );
 };
-
-

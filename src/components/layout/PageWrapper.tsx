@@ -1,39 +1,24 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React, { useEffect } from 'react';
 
 interface PageWrapperProps {
   children: React.ReactNode;
   title?: string;
-  subtitle?: string;
 }
 
-export const PageWrapper: React.FC<PageWrapperProps> = ({ children, title, subtitle }) => {
-  const pageRef = useRef<HTMLDivElement>(null);
+const SITE_TITLE = 'Teodosia Dobriyanova — Filmmaker, Curator & Video Journalist';
 
+export const PageWrapper: React.FC<PageWrapperProps> = ({ children, title }) => {
   useEffect(() => {
-    if (pageRef.current) {
-      gsap.fromTo(
-        pageRef.current,
-        { opacity: 0, y: 6 },
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
-      );
-    }
-  }, []);
+    document.title = title ? `${title} — Teodosia Dobriyanova` : SITE_TITLE;
+  }, [title]);
 
   return (
-    <div ref={pageRef} className="max-w-5xl mx-auto px-6 sm:px-10 py-4 sm:py-8 min-h-[65vh]">
-      {(title || subtitle) && (
-        <header className="mb-10">
-          {subtitle && (
-            <span className="text-[11px] uppercase tracking-[0.2em] text-[#A88B68] font-normal block mb-2">
-              {subtitle}
-            </span>
-          )}
-          {title && (
-            <h1 className="text-2xl sm:text-4xl text-[#2B2927] font-normal leading-tight">
-              {title}
-            </h1>
-          )}
+    <div className="fade-in max-w-4xl mx-auto px-6 sm:px-10 py-6 sm:py-10 min-h-[65vh]">
+      {title && (
+        <header className="mb-10 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl text-ink font-normal leading-tight">
+            {title}
+          </h1>
         </header>
       )}
       <main className="space-y-12">

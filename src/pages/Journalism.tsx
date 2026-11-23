@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
-import { ArrowUpRight, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, ChevronDown } from '../components/ui/Icons';
 
 export const Journalism: React.FC = () => {
   const [expandedVideos, setExpandedVideos] = useState<Record<number, boolean>>({});
   const [expandedArticles, setExpandedArticles] = useState<Record<number, boolean>>({});
 
   const toggleVideo = (idx: number) => {
-    setExpandedVideos(prev => ({ ...prev, [idx]: !prev[idx] }));
+    setExpandedVideos((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
   const toggleArticle = (idx: number) => {
-    setExpandedArticles(prev => ({ ...prev, [idx]: !prev[idx] }));
+    setExpandedArticles((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
-  // Video Journalism Reports (Direct YouTube / Video Links + Clean Formatted Descriptions)
   const videoReports = [
     {
       title: 'From Rom-Coms to BDSM: How Cinema Re-examines Desire, Babygirl, and Pillion',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2024',
       paragraphs: [
         'BDSM and cinema share a long history – so long that coded examples of Dom/sub dynamics on screen can be traced all the way back to silent film. But it was only in the 2000s that BDSM movies managed to become mainstream enough so that we can have films like Babygirl and Pillion. So, how did kink become so popular? And is more representation necessarily a good thing?',
@@ -28,7 +27,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'Could We Turn Cities Threatened by Floods Into Sponges?',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2023',
       paragraphs: [
         'What if bringing nature back to our gray cities could help us contain urban flooding? When architect Kongjian Yu first pitched this concept, he was celebrated in the West, but ignored in his native China—until a devastating flood in 2012 hit Beijing and forced policymakers to give his green idea a chance.',
@@ -38,7 +37,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'Why Is the World’s Newest Country Facing an Existential Threat?',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2023',
       paragraphs: [
         'South Sudan, the world\'s newest country, has been grappling with extreme weather events for almost half of its independent history.',
@@ -49,7 +48,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'Why Europe is Facing Record-Breaking Heatwaves',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2022',
       paragraphs: [
         'While July 2021 was marked by devastating floods across Europe, this summer the continent is enduring a record-breaking heatwave. Many European regions have reached all-time high temperatures, resulting in the spread of wildfires. This includes the UK, where temperatures reached 40.2°C for the first time in history.',
@@ -59,7 +58,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'Why Venice’s Canals Are Drying Up',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2023',
       paragraphs: [
         'Can you imagine Venice without its iconic waters? After a winter of low snow and rainfall, a record low level tide of -62 centimetres above mean sea level has emptied some of the ancient city\'s 150 canals. This has stranded boats and gondolas and complicated emergency and essential services.',
@@ -69,7 +68,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'The Sandstone School Harnessing Natural Cooling in the Thar Desert',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2023',
       paragraphs: [
         'An oval building made of sandstone stands amid the Thar desert near the city of Jaisalmer, India. The Rajkumari Ratnavati Girl’s School blends so well with the landscape that it almost seems to be emerging from the dunes. This, of course, is by design.',
@@ -80,7 +79,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'Solar Energy Must Be Beautiful as Well as Sustainable',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2022',
       paragraphs: [
         'In the race to catch up with renewable energy, the question of aesthetics is rarely on the table. Considering our growing need for energy independence away from fossil fuels, this is somewhat understandable. Yet, many individuals and entire regions are refusing to make the leap to renewable energy exactly because of the way solar panels and wind turbines look. In the city of Amsterdam, whose historic centre is a protected conservation area, solar panels ruin the traditional landscape and are therefore not permitted.',
@@ -91,7 +90,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'Meet ECHO: The Robot Living With Antarctica’s Emperor Penguins',
-      outlet: 'Mashable / Video Journalism',
+      outlet: 'Mashable',
       date: '2022',
       paragraphs: [
         'ECHO is a small yellow robot currently living with a colony of emperor penguins in Antarctica. The robot is part of a project by Woods Hole Oceanographic Institution studying climate change\'s impact on the South Pole\'s most iconic inhabitants.',
@@ -101,7 +100,7 @@ export const Journalism: React.FC = () => {
     },
     {
       title: 'В кухнята, в бара, на улицата: домашното насилие в България',
-      outlet: 'Deutsche Welle (DW)',
+      outlet: 'Deutsche Welle',
       date: '2023',
       paragraphs: [
         'An in-depth investigation into domestic violence in Bulgaria, examining structural protection, social stigma, and survivor testimonies in public and private spaces.'
@@ -110,7 +109,6 @@ export const Journalism: React.FC = () => {
     }
   ];
 
-  // Written Features & Articles (Chronological Order: Newest to Oldest)
   const writtenArticles = [
     {
       title: 'World Water Day: UN Warnings & Climate Crisis Solutions',
@@ -171,67 +169,69 @@ export const Journalism: React.FC = () => {
   ];
 
   return (
-    <PageWrapper
-      subtitle="Video Reporting & Published Articles"
-      title="Journalism"
-    >
-      {/* Video Reporting Section */}
+    <PageWrapper title="Journalism">
+      {/* Video Reporting */}
       <section className="space-y-4">
-        <div className="text-xs uppercase tracking-[0.2em] text-[#A88B68] font-medium">
-          Video Journalism & Reportages
-        </div>
+        <h2 className="text-sm text-ink-muted font-sans font-medium tracking-[0.02em]">
+          Video Journalism
+        </h2>
 
-        <div className="divide-y divide-[#F0ECE1]">
+        <div className="divide-y divide-canvas-subtle">
           {videoReports.map((item, idx) => {
             const isExpanded = !!expandedVideos[idx];
             return (
               <div
-                key={idx}
-                onClick={() => toggleVideo(idx)}
-                className="py-2 px-3 -mx-3 rounded-md cursor-pointer hover:bg-[#F0ECE1]/30 transition-colors duration-150 group"
+                key={item.title}
+                className="py-3.5 px-3 -mx-3 rounded-lg hover:bg-canvas-subtle/40 transition-colors duration-150 group"
               >
-                {/* Compact Header Row */}
                 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4">
-                  <div className="md:w-1/4 space-y-0.5 shrink-0">
-                    <div className="text-[11px] text-[#A88B68] font-medium uppercase tracking-wider">{item.outlet}</div>
-                    <div className="text-xs text-[#75716B] font-light">{item.date}</div>
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => toggleVideo(idx)}
+                    aria-expanded={isExpanded}
+                    className="flex-1 flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 text-left cursor-pointer rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth"
+                  >
+                    <div className="md:w-40 shrink-0 flex items-baseline gap-2 md:block text-sm tabular-nums">
+                      <span className="text-earth">{item.outlet}</span>
+                      <span aria-hidden="true" className="text-border md:hidden">&middot;</span>
+                      <span className="text-xs text-ink-muted md:block">{item.date}</span>
+                    </div>
 
-                  <div className="md:w-8/12 flex items-baseline justify-between gap-3">
-                    <h2 className="text-base md:text-lg text-[#2B2927] group-hover:text-[#A88B68] transition-colors leading-snug">
+                    <h3 className="flex-1 text-lg text-ink group-hover:text-earth transition-colors leading-snug">
                       {item.title}
-                    </h2>
-                  </div>
+                    </h3>
+                  </button>
 
-                  <div className="md:w-1/12 flex items-center justify-end gap-2.5 shrink-0">
+                  <div className="flex items-center justify-end gap-2.5 shrink-0">
                     {item.youtubeUrl && item.youtubeUrl !== '#' && (
                       <a
                         href={item.youtubeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        title="Open external link"
-                        className="text-[#A88B68] hover:text-[#2B2927] transition-colors p-0.5"
+                        aria-label={`Watch ${item.title}`}
+                        title="Watch video"
+                        className="text-earth/80 hover:text-ink transition-colors p-1"
                       >
                         <ArrowUpRight size={14} />
                       </a>
                     )}
                     <button
                       type="button"
-                      aria-label="Toggle details"
-                      className="text-[#75716B] group-hover:text-[#2B2927] transition-colors p-0.5"
+                      onClick={() => toggleVideo(idx)}
+                      aria-expanded={isExpanded}
+                      aria-label={`Toggle summary for ${item.title}`}
+                      className="text-ink-muted hover:text-ink transition-colors p-1 cursor-pointer"
                     >
                       <ChevronDown
                         size={14}
-                        className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#A88B68]' : ''}`}
+                        className={`transition-transform duration-200 ${isExpanded ? 'rotate-180 text-earth' : ''}`}
                       />
                     </button>
                   </div>
                 </div>
 
-                {/* Expandable Content */}
                 {isExpanded && (
-                  <div className="mt-3 pt-3 border-t border-[#F0ECE1]/70 space-y-2.5 text-[13px] text-[#75716B] font-light leading-relaxed md:ml-[25%] pr-2">
+                  <div className="mt-3 pt-3 border-t border-canvas-subtle/80 space-y-2.5 text-[15px] text-ink-muted leading-relaxed md:ml-44 pr-2 max-w-2xl">
                     {item.paragraphs.map((p, pIdx) => (
                       <p key={pIdx}>{p}</p>
                     ))}
@@ -243,63 +243,68 @@ export const Journalism: React.FC = () => {
         </div>
       </section>
 
-      {/* Written Articles & Features */}
-      <section className="space-y-4 pt-8 border-t border-[#F0ECE1]">
-        <div className="text-xs uppercase tracking-[0.2em] text-[#A88B68] font-medium">
-          Written Features & Articles
-        </div>
+      {/* Written Articles */}
+      <section className="space-y-4 pt-10 border-t border-canvas-subtle">
+        <h2 className="text-sm text-ink-muted font-sans font-medium tracking-[0.02em]">
+          Written Features
+        </h2>
 
-        <div className="divide-y divide-[#F0ECE1]">
+        <div className="divide-y divide-canvas-subtle">
           {writtenArticles.map((article, idx) => {
             const isExpanded = !!expandedArticles[idx];
             return (
               <div
-                key={idx}
-                onClick={() => toggleArticle(idx)}
-                className="py-2 px-3 -mx-3 rounded-md cursor-pointer hover:bg-[#F0ECE1]/30 transition-colors duration-150 group"
+                key={article.title}
+                className="py-3.5 px-3 -mx-3 rounded-lg hover:bg-canvas-subtle/40 transition-colors duration-150 group"
               >
-                {/* Compact Header Row */}
                 <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4">
-                  <div className="md:w-1/4 space-y-0.5 shrink-0">
-                    <div className="text-[11px] text-[#A88B68] font-medium uppercase tracking-wider">{article.outlet}</div>
-                    <div className="text-xs text-[#75716B] font-light">{article.date}</div>
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => toggleArticle(idx)}
+                    aria-expanded={isExpanded}
+                    className="flex-1 flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 text-left cursor-pointer rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth"
+                  >
+                    <div className="md:w-40 shrink-0 flex items-baseline gap-2 md:block text-sm tabular-nums">
+                      <span className="text-earth">{article.outlet}</span>
+                      <span aria-hidden="true" className="text-border md:hidden">&middot;</span>
+                      <span className="text-xs text-ink-muted md:block">{article.date}</span>
+                    </div>
 
-                  <div className="md:w-8/12 flex items-baseline justify-between gap-3">
-                    <h3 className="text-base md:text-lg text-[#2B2927] group-hover:text-[#A88B68] transition-colors leading-snug">
+                    <h3 className="flex-1 text-lg text-ink group-hover:text-earth transition-colors leading-snug">
                       {article.title}
                     </h3>
-                  </div>
+                  </button>
 
-                  <div className="md:w-1/12 flex items-center justify-end gap-2.5 shrink-0">
+                  <div className="flex items-center justify-end gap-2.5 shrink-0">
                     {article.articleUrl && article.articleUrl !== '#' && (
                       <a
                         href={article.articleUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        title="Open article link"
-                        className="text-[#A88B68] hover:text-[#2B2927] transition-colors p-0.5"
+                        aria-label={`Read ${article.title}`}
+                        title="Read article"
+                        className="text-earth/80 hover:text-ink transition-colors p-1"
                       >
                         <ArrowUpRight size={14} />
                       </a>
                     )}
                     <button
                       type="button"
-                      aria-label="Toggle details"
-                      className="text-[#75716B] group-hover:text-[#2B2927] transition-colors p-0.5"
+                      onClick={() => toggleArticle(idx)}
+                      aria-expanded={isExpanded}
+                      aria-label={`Toggle summary for ${article.title}`}
+                      className="text-ink-muted hover:text-ink transition-colors p-1 cursor-pointer"
                     >
                       <ChevronDown
                         size={14}
-                        className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#A88B68]' : ''}`}
+                        className={`transition-transform duration-200 ${isExpanded ? 'rotate-180 text-earth' : ''}`}
                       />
                     </button>
                   </div>
                 </div>
 
-                {/* Expandable Content */}
                 {isExpanded && (
-                  <div className="mt-3 pt-3 border-t border-[#F0ECE1]/70 text-[13px] text-[#75716B] font-light leading-relaxed md:ml-[25%] pr-2">
+                  <div className="mt-3 pt-3 border-t border-canvas-subtle/80 text-[15px] text-ink-muted leading-relaxed md:ml-44 pr-2 max-w-2xl">
                     <p>{article.description}</p>
                   </div>
                 )}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from '../ui/Icons';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,38 +15,33 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="w-full bg-[#F9F7F2] py-6 sm:py-8 transition-all">
-      <div className="max-w-5xl mx-auto px-6 sm:px-10 flex items-baseline justify-between">
-        
-        {/* Titlemark */}
-        <NavLink 
-          to="/" 
-          className="group transition-opacity duration-300 hover:opacity-75"
+    <header className="w-full bg-canvas py-7 sm:py-9">
+      <div className="max-w-4xl mx-auto px-6 sm:px-10 flex items-baseline justify-between gap-6">
+        <NavLink
+          to="/"
+          className="transition-opacity duration-200 hover:opacity-70"
           onClick={() => setIsOpen(false)}
         >
-          <span className=" text-2xl sm:text-3xl text-[#2B2927] font-normal tracking-tight block">
+          <span className="font-serif text-2xl text-ink font-normal tracking-tight block">
             Teodosia Dobriyanova
           </span>
         </NavLink>
 
-        {/* Desktop Navigation - Minimal quiet links */}
-        <nav className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation */}
+        <nav aria-label="Primary" className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
               <NavLink
                 key={item.path}
                 to={item.path}
-                className={`relative text-xs uppercase tracking-[0.18em] transition-all duration-300 font-light ${
-                  isActive 
-                    ? 'text-[#2B2927] font-medium' 
-                    : 'text-[#75716B] hover:text-[#2B2927]'
+                className={`text-sm tracking-[0.01em] transition-colors duration-200 ${
+                  isActive
+                    ? 'text-ink underline decoration-earth/75 underline-offset-[6px]'
+                    : 'text-ink-muted hover:text-ink'
                 }`}
               >
                 {item.name}
-                {isActive && (
-                  <span className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#A88B68] rounded-full" />
-                )}
               </NavLink>
             );
           })}
@@ -54,9 +49,11 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu Toggle */}
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#2B2927] p-1 focus:outline-none"
+          className="md:hidden text-ink p-1 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth cursor-pointer"
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
         </button>
@@ -64,12 +61,16 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#F9F7F2] px-6 py-8 border-b border-[#F0ECE1] fade-in">
-          <nav className="flex flex-col space-y-4">
+        <div className="md:hidden bg-canvas px-6 py-6 border-b border-canvas-subtle fade-in">
+          <nav aria-label="Mobile" className="flex flex-col space-y-3">
             <NavLink
               to="/"
               onClick={() => setIsOpen(false)}
-              className="text-xs uppercase tracking-[0.2em] text-[#75716B] hover:text-[#2B2927]"
+              className={({ isActive }) =>
+                `text-sm py-1 transition-colors ${
+                  isActive ? 'text-ink font-medium' : 'text-ink-muted hover:text-ink'
+                }`
+              }
             >
               Home
             </NavLink>
@@ -79,8 +80,8 @@ export const Navbar: React.FC = () => {
                 to={item.path}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `text-xs uppercase tracking-[0.2em] py-1 transition-colors ${
-                    isActive ? 'text-[#2B2927] font-medium' : 'text-[#75716B]'
+                  `text-sm py-1 transition-colors ${
+                    isActive ? 'text-ink font-medium' : 'text-ink-muted hover:text-ink'
                   }`
                 }
               >

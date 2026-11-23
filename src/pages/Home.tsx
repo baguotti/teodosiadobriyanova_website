@@ -6,23 +6,23 @@ export const Home: React.FC = () => {
   const sections = [
     {
       title: 'Directing',
-      subtitle: 'Hybrid Documentaries & Interactive Work',
+      subtitle: 'Hybrid documentaries & interactive work',
       link: '/directing',
     },
     {
       title: 'Film Programming',
-      subtitle: 'Barbican & Festival Curatorial Work',
+      subtitle: 'Barbican Centre & festival curatorial work',
       link: '/film-programming',
     },
     {
       title: 'Journalism',
-      subtitle: 'Video Reporting & Features',
+      subtitle: 'Video reporting & published features',
       link: '/journalism',
     },
     /*
     {
       title: 'Producing & planet.a',
-      subtitle: 'Independent Non-Fiction & Visual Hub',
+      subtitle: 'Independent non-fiction & visual hub',
       link: '/producing',
     }
     */
@@ -30,66 +30,61 @@ export const Home: React.FC = () => {
 
   return (
     <PageWrapper>
-      {/* Hero Section: Side-by-Side Portrait & Bio */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center py-4 sm:py-10">
-        
-        {/* Portrait Image Column */}
+      {/* Hero Section: Side-by-Side Portrait & Intro */}
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center py-4 sm:py-8">
         <div className="md:col-span-4 flex justify-start">
-          <div className="w-44 h-56 sm:w-52 sm:h-64 lg:w-60 lg:h-72 rounded-xl overflow-hidden border border-[#F0ECE1] bg-[#F0ECE1]/30 shadow-xs">
-            <img 
-              src="/assets/portrait.jpg" 
-              alt="Teodosia Dobriyanova" 
+          <div className="w-44 h-56 sm:w-52 sm:h-64 lg:w-56 lg:h-72 rounded-xl overflow-hidden border border-border bg-canvas-subtle/40 shadow-xs">
+            <img
+              src="/assets/portrait.jpg"
+              alt="Teodosia Dobriyanova"
+              width={639}
+              height={800}
+              decoding="async"
               className="w-full h-full object-cover object-[50%_18%]"
             />
           </div>
         </div>
 
-        {/* Bio & Intro Text Column */}
-        <div className="md:col-span-8 space-y-6">
-          <div className="text-xs uppercase tracking-[0.2em] text-[#A88B68] font-normal">
-            Filmmaker & Curator &bull; London & Sofia
-          </div>
-
-          <h1 className=" text-xl sm:text-2xl lg:text-4xl text-[#2B2927] font-normal leading-[1.2]">
+        <div className="md:col-span-8 space-y-5">
+          <h1 className="text-2xl sm:text-3xl text-ink font-normal leading-[1.3]">
             Filmmaker, curator, and video journalist based between London and Sofia.
           </h1>
 
-          <div className="pt-2 flex items-center space-x-6 text-xs uppercase tracking-widest text-[#75716B]">
-            <a 
-              href="mailto:tdobriyanova@gmail.com" 
-              className="text-[#2B2927] hover:text-[#A88B68] transition-colors border-b border-[#A88B68]/30 pb-0.5"
+          <p className="text-sm text-ink-muted">
+            <a
+              href="mailto:tdobriyanova@gmail.com"
+              className="text-ink hover:text-earth underline decoration-earth/35 hover:decoration-earth transition-colors"
             >
-              Get in touch
+              tdobriyanova@gmail.com
             </a>
-          </div>
+          </p>
         </div>
       </section>
 
-      {/* Clean Editorial Practice List */}
-      <section className="space-y-8 pt-8 border-t border-[#F0ECE1]">
-        <div className="text-xs uppercase tracking-[0.2em] text-[#A88B68] font-normal">
-          Selected Practice
-        </div>
-
-        <div className="divide-y divide-[#F0ECE1]">
-          {sections.map((item, idx) => (
+      {/* Work Index */}
+      <section aria-label="Work" className="pt-10 border-t border-canvas-subtle">
+        <div className="divide-y divide-canvas-subtle">
+          {sections.map((item) => (
             <Link
-              key={idx}
+              key={item.link}
               to={item.link}
-              className="group py-5 flex flex-row items-center justify-between gap-4 transition-opacity duration-300 hover:opacity-75"
+              className="group py-6 first:pt-0 flex items-baseline justify-between gap-6 transition-colors duration-200"
             >
-              <div>
-                <h2 className="text-xl sm:text-2xl text-[#2B2927] group-hover:text-[#A88B68] transition-colors">
+              <div className="space-y-1">
+                <h2 className="text-xl sm:text-2xl text-ink group-hover:text-earth transition-colors leading-snug">
                   {item.title}
                 </h2>
-                <span className="text-xs text-[#A88B68] font-light tracking-wide block mt-0.5">
+                <p className="text-sm text-ink-muted">
                   {item.subtitle}
-                </span>
+                </p>
               </div>
 
-              <div className="text-xs uppercase tracking-widest text-[#2B2927] flex items-center shrink-0">
-                <span>View &rarr;</span>
-              </div>
+              <span
+                aria-hidden="true"
+                className="text-ink-muted group-hover:text-earth group-hover:translate-x-1 transition-all duration-200 shrink-0 text-lg"
+              >
+                &rarr;
+              </span>
             </Link>
           ))}
         </div>
