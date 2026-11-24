@@ -1,6 +1,20 @@
 {
   "seasons": [
     {
+      "title": "Kino Bloc",
+      "venue": "Barbican Centre",
+      "date": "since 2026",
+      "description": "",
+      "link": "https://www.barbican.org.uk/whats-on/2026/series/kino-bloc-eastern-europe-central-asia-the-balkans-on"
+    },
+    {
+      "title": "Environment & Community Strand",
+      "venue": "Cambridge Film Festival",
+      "date": "2026",
+      "description": "",
+      "link": "https://www.cambridgefilmfestival.org.uk/strands/environment-community"
+    },
+    {
       "title": "Cold War Visions: Nuclear Anxiety in the Eastern Bloc",
       "venue": "Barbican Centre",
       "date": "April 2026",

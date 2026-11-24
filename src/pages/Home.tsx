@@ -22,6 +22,7 @@ export const Home: React.FC = () => {
                 width={639}
                 height={800}
                 decoding="async"
+                fetchPriority="high"
                 className="w-full h-full object-cover object-[50%_18%]"
               />
             </div>

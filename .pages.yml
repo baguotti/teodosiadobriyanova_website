@@ -137,9 +137,6 @@ content:
           - name: date
             label: Date
             type: string
-          - name: description
-            label: Description
-            type: text
           - name: link
             label: Link
             type: string
