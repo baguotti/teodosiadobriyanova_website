@@ -13,7 +13,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({ children, title }) => 
   }, [title]);
 
   return (
-    <div className="fade-in max-w-4xl mx-auto px-6 sm:px-10 py-6 sm:py-10 min-h-[65vh]">
+    <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 pt-4 sm:pt-6 pb-16 sm:pb-24 min-h-[65vh]">
       {title && (
         <header className="mb-10 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl text-ink font-normal leading-tight">

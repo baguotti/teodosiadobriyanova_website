@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #F9F7F2;
-  --color-canvas-subtle: #F0ECE1;
-  --color-border: #E6E0D4;
-  --color-ink: #2B2927;
-  --color-ink-muted: #6E6A63;
-  --color-earth: #856846;
+  --color-canvas: #FEFEFD;
+  --color-canvas-subtle: #F4F3F1;
+  --color-border: #E5E4E1;
+  --color-ink: #1E1F22;
+  --color-ink-muted: #66686E;
+  --color-earth: #2F4B8A;
 
-  --font-sans: 'Source Sans 3 Variable', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
 }
 
 html {
   background-color: var(--color-canvas);
   color-scheme: light;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -22,16 +23,28 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   caret-color: var(--color-earth);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Barely-there unbleached paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
 h1, h2, h3, h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 400;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
@@ -43,25 +56,4 @@ a {
 ::selection {
   background-color: var(--color-canvas-subtle);
   color: var(--color-ink);
-}
-
-.fade-in {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(3px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fade-in {
-    animation: none;
-  }
 }

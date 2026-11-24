@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
 import { PageWrapper } from './components/layout/PageWrapper';
 import { Home } from './pages/Home';
 import { Directing } from './pages/Directing';
@@ -48,7 +47,6 @@ export function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
-        <Footer />
       </div>
     </Router>
   );

@@ -1,39 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { Link } from 'react-router-dom';
+import { HandDrawnBullet, HandDrawnUnderline } from '../components/ui/HandDrawn';
 
 export const Home: React.FC = () => {
+  useEffect(() => {
+    document.title = 'teodosia dobriyanova — filmmaker, curator & video journalist';
+  }, []);
+
   const sections = [
     {
-      title: 'Directing',
-      subtitle: 'Hybrid documentaries & interactive work',
+      title: 'directing',
+      subtitle: 'hybrid documentaries & interactive work',
       link: '/directing',
     },
     {
-      title: 'Film Programming',
+      title: 'film programming',
       subtitle: 'Barbican Centre & festival curatorial work',
       link: '/film-programming',
     },
     {
-      title: 'Journalism',
-      subtitle: 'Video reporting & published features',
+      title: 'journalism',
+      subtitle: 'video reporting & published features',
       link: '/journalism',
     },
-    /*
-    {
-      title: 'Producing & planet.a',
-      subtitle: 'Independent non-fiction & visual hub',
-      link: '/producing',
-    }
-    */
   ];
 
   return (
     <PageWrapper>
-      {/* Hero Section: Side-by-Side Portrait & Intro */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center py-4 sm:py-8">
-        <div className="md:col-span-4 flex justify-start">
-          <div className="w-44 h-56 sm:w-52 sm:h-64 lg:w-56 lg:h-72 rounded-xl overflow-hidden border border-border bg-canvas-subtle/40 shadow-xs">
+      {/* Portrait & Bio */}
+      <section className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-7">
+        <div className="relative shrink-0">
+          <div
+            className="w-40 h-52 sm:w-44 sm:h-56 bg-white p-[5px] shadow-[0_1px_5px_rgba(30,31,34,0.08)]"
+            style={{
+              clipPath: 'polygon(0.6% 0.4%, 99.5% 0%, 100% 99.3%, 0.2% 100%)',
+            }}
+          >
             <img
               src="/assets/portrait.jpg"
               alt="Teodosia Dobriyanova"
@@ -45,49 +48,55 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="md:col-span-8 space-y-5">
-          <h1 className="text-2xl sm:text-3xl text-ink font-normal leading-[1.3]">
-            Filmmaker, curator, and video journalist based between London and Sofia.
+        <div className="space-y-1.5 max-w-sm">
+          <h1 className="text-[15px] text-ink font-normal lowercase leading-relaxed">
+            filmmaker, curator, and video journalist based between london and sofia.
           </h1>
 
-          <p className="text-sm text-ink-muted">
+          <p className="text-sm text-ink-muted flex flex-wrap items-center gap-x-3 gap-y-1">
             <a
               href="mailto:tdobriyanova@gmail.com"
-              className="text-ink hover:text-earth underline decoration-earth/35 hover:decoration-earth transition-colors"
+              className="hover:text-ink hover:underline decoration-earth/45"
             >
               tdobriyanova@gmail.com
+            </a>
+            <span aria-hidden="true" className="text-border">&middot;</span>
+            <a
+              href="https://www.instagram.com/teodosiadob/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ink hover:underline decoration-earth/45 lowercase"
+            >
+              instagram
             </a>
           </p>
         </div>
       </section>
 
       {/* Work Index */}
-      <section aria-label="Work" className="pt-10 border-t border-canvas-subtle">
-        <div className="divide-y divide-canvas-subtle">
-          {sections.map((item) => (
-            <Link
-              key={item.link}
-              to={item.link}
-              className="group py-6 first:pt-0 flex items-baseline justify-between gap-6 transition-colors duration-200"
-            >
-              <div className="space-y-1">
-                <h2 className="text-xl sm:text-2xl text-ink group-hover:text-earth transition-colors leading-snug">
-                  {item.title}
-                </h2>
-                <p className="text-sm text-ink-muted">
-                  {item.subtitle}
-                </p>
-              </div>
+      <section aria-label="Work" className="space-y-2.5 -mt-4">
+        <h2 className="text-sm font-normal text-ink lowercase">
+          <HandDrawnUnderline size="sm" variant={1}>work</HandDrawnUnderline>
+        </h2>
 
-              <span
-                aria-hidden="true"
-                className="text-ink-muted group-hover:text-earth group-hover:translate-x-1 transition-all duration-200 shrink-0 text-lg"
-              >
-                &rarr;
-              </span>
-            </Link>
+        <ul className="space-y-1 max-w-4xl">
+          {sections.map((item, idx) => (
+            <li key={item.link} className="flex items-start gap-3 leading-snug">
+              <HandDrawnBullet variant={idx} className="mt-[0.42rem]" />
+              <div className="text-[15px]">
+                <Link
+                  to={item.link}
+                  className="group text-ink hover:text-earth lowercase"
+                >
+                  <HandDrawnUnderline hoverOnly size="sm" variant={idx + 2}>
+                    {item.title}
+                  </HandDrawnUnderline>
+                </Link>
+                <span className="italic text-ink-muted">, {item.subtitle}</span>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </PageWrapper>
   );

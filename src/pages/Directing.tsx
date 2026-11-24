@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
-import { ArrowUpRight } from '../components/ui/Icons';
+import { HandDrawnUnderline } from '../components/ui/HandDrawn';
 
 export const Directing: React.FC = () => {
+  const [showCredits, setShowCredits] = useState(false);
+
+  useEffect(() => {
+    document.title = 'directing — teodosia dobriyanova';
+  }, []);
+
   const credits = [
     { role: 'Director', name: 'Teodosia Dobriyanova' },
     { role: 'Producers', name: 'Georgi Marchev, Mina Kirkova' },
@@ -15,34 +21,34 @@ export const Directing: React.FC = () => {
     { role: 'Production Company', name: 'Story Films' }
   ];
 
-  const stories = [
-    { title: 'A Story that Liberates', author: 'Mihaela Georgieva' },
-    { title: 'Good Enough', author: 'Teyah Mineva & Kalina Staneva' },
-    { title: 'Moka', author: 'Anonymous & Bilyana Georgieva' },
-    { title: 'Phoenix', author: 'Nora Hristova & Lilia Nova' }
-  ];
-
   return (
-    <PageWrapper title="Directing">
-      {/* Current Project */}
-      <section className="space-y-6">
-        <div className="space-y-1.5">
-          <h2 className="text-xl sm:text-2xl text-ink leading-snug">
-            Сякаш не се е случвало{' '}
-            <span className="italic text-ink-muted font-light">(Like Nothing Ever Happened)</span>
-          </h2>
-          <p className="text-sm text-ink-muted">
-            Short Hybrid Documentary <span className="text-earth">(Currently in Post-production)</span>
-          </p>
-        </div>
+    <PageWrapper>
+      <h1 className="sr-only">directing</h1>
 
-        <div className="w-full max-w-2xl">
-          <div className="w-full aspect-[16/9] overflow-hidden rounded-xl border border-border shadow-xs">
+      {/* Current Project */}
+      <section className="space-y-3.5">
+        <h2 className="text-sm font-normal text-ink lowercase">
+          <HandDrawnUnderline size="sm" variant={1}>film</HandDrawnUnderline>
+        </h2>
+
+        <div className="space-y-4 max-w-2xl">
+          <div className="space-y-0.5 leading-snug">
+            <h3 className="text-[15px] text-ink">
+              Сякаш не се е случвало{' '}
+              <span className="italic text-ink-muted">(Like Nothing Ever Happened)</span>
+            </h3>
+            <p className="text-sm text-ink-muted">
+              Short Hybrid Documentary{' '}
+              <span className="italic text-earth">(Currently in Post-production)</span>
+            </p>
+          </div>
+
+          <div className="w-full max-w-xl aspect-[3/2] overflow-hidden bg-canvas-subtle/40">
             <img
               src="/assets/lneh.jpg"
               alt="Still from Сякаш не се е случвало (Like Nothing Ever Happened)"
-              width={800}
-              height={450}
+              width={1200}
+              height={795}
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover"
@@ -52,80 +58,69 @@ export const Directing: React.FC = () => {
       </section>
 
       {/* Interactive Installation */}
-      <section className="space-y-10 pt-10 border-t border-canvas-subtle">
-        <div className="space-y-4">
-          <div className="space-y-1.5">
-            <h2 className="text-xl sm:text-2xl text-ink leading-snug">
-              <a
-                href="https://www.instagram.com/tova.ne.e.nasilie/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-earth transition-colors inline-flex items-baseline flex-wrap gap-x-2 group"
-              >
-                <span className="group-hover:underline decoration-earth/40">Това не е насилие</span>
-                <span className="italic text-ink-muted group-hover:text-earth font-light transition-colors">
-                  (This Isn’t Violence)
-                </span>
-                <ArrowUpRight size={14} className="text-earth/75 group-hover:text-earth transition-colors self-center" />
-              </a>
-            </h2>
-            <p className="text-sm text-ink-muted tabular-nums">
-              Interactive Installation &middot; 2023
-            </p>
-          </div>
+      <section className="space-y-3.5 pt-4">
+        <h2 className="text-sm font-normal text-ink lowercase">
+          <HandDrawnUnderline size="sm" variant={3}>interactive installation</HandDrawnUnderline>
+        </h2>
 
-          <p className="text-[15px] text-ink-muted leading-relaxed max-w-2xl">
-            An interactive web-based installation presenting four micro stories written by women who have survived domestic abuse. Funded by the National Culture Fund of Bulgaria, in collaboration with Emprove Project.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-6 text-sm pt-1">
+        <div className="space-y-2.5 max-w-2xl">
+          <div className="text-[15px] leading-snug">
             <a
               href="https://www.instagram.com/tova.ne.e.nasilie/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-ink hover:text-earth underline decoration-earth/35 hover:decoration-earth transition-colors inline-flex items-center gap-1"
+              className="text-ink hover:text-earth hover:underline decoration-earth/45"
             >
-              @tova.ne.e.nasilie <ArrowUpRight size={14} className="opacity-70" />
+              Това не е насилие{' '}
+              <span className="italic text-ink-muted">(This Isn’t Violence)</span>
             </a>
+            <span className="text-sm text-ink-muted tabular-nums">, 2023</span>
+          </div>
+
+          <p className="text-sm text-ink-muted leading-relaxed">
+            An interactive web-based installation presenting four micro stories written by women who have survived domestic abuse. Funded by the National Culture Fund of Bulgaria, in collaboration with Emprove Project.
+          </p>
+
+          <p className="text-sm text-ink-muted flex flex-wrap items-center gap-x-3 gap-y-1">
+            <a
+              href="https://www.instagram.com/tova.ne.e.nasilie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink hover:text-earth hover:underline decoration-earth/45"
+            >
+              @tova.ne.e.nasilie
+            </a>
+            <span aria-hidden="true" className="text-border">&middot;</span>
             <a
               href="https://www.dw.com/bg/v-kuhnata-v-bara-na-ulicata-domasnoto-nasilie-v-blgaria/a-65730058"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-ink-muted hover:text-ink transition-colors inline-flex items-center gap-1"
+              className="hover:text-ink hover:underline decoration-earth/45"
             >
-              DW Interview <ArrowUpRight size={14} className="opacity-70" />
+              DW Interview
             </a>
-          </div>
-        </div>
+            <span aria-hidden="true" className="text-border">&middot;</span>
+            <button
+              type="button"
+              onClick={() => setShowCredits((prev) => !prev)}
+              aria-expanded={showCredits}
+              className="text-earth hover:text-ink hover:underline decoration-earth/45 lowercase cursor-pointer rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth"
+            >
+              credits
+            </button>
+          </p>
 
-        {/* Stories List */}
-        <div className="space-y-4">
-          <h3 className="text-sm text-ink-muted font-sans font-medium tracking-[0.02em]">
-            Micro-Stories
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-            {stories.map((s) => (
-              <div key={s.title} className="space-y-0.5">
-                <div className="font-serif text-lg text-ink">{s.title}</div>
-                <div className="text-sm text-ink-muted">{s.author}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Project Credits */}
-        <div className="space-y-4 pt-10 border-t border-canvas-subtle">
-          <h3 className="text-sm text-ink-muted font-sans font-medium tracking-[0.02em]">
-            Credits
-          </h3>
-          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4 text-sm">
-            {credits.map((c) => (
-              <div key={c.role} className="space-y-0.5">
-                <dt className="text-xs text-earth">{c.role}</dt>
-                <dd className="text-ink">{c.name}</dd>
-              </div>
-            ))}
-          </dl>
+          {showCredits && (
+            <p className="pt-2 text-sm text-ink-muted leading-relaxed">
+              {credits.map((c, idx) => (
+                <React.Fragment key={c.role}>
+                  <span className="italic">{c.role}:</span>{' '}
+                  <span className="text-ink">{c.name}</span>
+                  {idx < credits.length - 1 ? ' · ' : ''}
+                </React.Fragment>
+              ))}
+            </p>
+          )}
         </div>
       </section>
     </PageWrapper>
