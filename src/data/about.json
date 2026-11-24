@@ -6,7 +6,7 @@
   "workLinks": [
     {
       "title": "directing",
-      "subtitle": "hybrid documentaries & interactive work",
+      "subtitle": "documentaries and fiction",
       "link": "/directing"
     },
     {
@@ -16,8 +16,13 @@
     },
     {
       "title": "journalism",
-      "subtitle": "video reporting & published features",
+      "subtitle": "video reporting & film criticism",
       "link": "/journalism"
+    },
+    {
+      "title": "producing",
+      "subtitle": "short films & music videos",
+      "link": "/producing"
     }
   ]
 }

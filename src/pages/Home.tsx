@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
 import { Link } from 'react-router-dom';
-import { HandDrawnBullet, HandDrawnUnderline } from '../components/ui/HandDrawn';
+import { HandDrawnUnderline } from '../components/ui/HandDrawn';
 import aboutData from '../data/about.json';
 
 export const Home: React.FC = () => {
@@ -15,12 +15,7 @@ export const Home: React.FC = () => {
       <section className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-7">
         {aboutData.portrait && (
           <div className="relative shrink-0">
-            <div
-              className="w-40 h-52 sm:w-44 sm:h-56 bg-white p-[5px] shadow-[0_1px_5px_rgba(30,31,34,0.08)]"
-              style={{
-                clipPath: 'polygon(0.6% 0.4%, 99.5% 0%, 100% 99.3%, 0.2% 100%)',
-              }}
-            >
+            <div className="w-40 h-52 sm:w-44 sm:h-56 overflow-hidden rounded-[3px] bg-canvas-subtle/40">
               <img
                 src={aboutData.portrait}
                 alt="Teodosia Dobriyanova"
@@ -70,23 +65,20 @@ export const Home: React.FC = () => {
           <HandDrawnUnderline size="sm" variant={1}>work</HandDrawnUnderline>
         </h2>
 
-        <ul className="space-y-1 max-w-4xl">
+        <ul className="list-disc pl-5 marker:text-ink-muted space-y-1 max-w-4xl">
           {aboutData.workLinks.map((item, idx) => (
-            <li key={item.link} className="flex items-start gap-3 leading-snug">
-              <HandDrawnBullet variant={idx} className="mt-[0.42rem]" />
-              <div className="text-[15px]">
-                <Link
-                  to={item.link}
-                  className="group text-ink hover:text-earth lowercase"
-                >
-                  <HandDrawnUnderline hoverOnly size="sm" variant={idx + 2}>
-                    {item.title}
-                  </HandDrawnUnderline>
-                </Link>
-                {item.subtitle && (
-                  <span className="italic text-ink-muted">, {item.subtitle}</span>
-                )}
-              </div>
+            <li key={item.link} className="text-[15px] leading-snug">
+              <Link
+                to={item.link}
+                className="group text-ink hover:text-earth lowercase"
+              >
+                <HandDrawnUnderline hoverOnly size="sm" variant={idx + 2}>
+                  {item.title}
+                </HandDrawnUnderline>
+              </Link>
+              {item.subtitle && (
+                <span className="italic text-ink-muted">, {item.subtitle}</span>
+              )}
             </li>
           ))}
         </ul>

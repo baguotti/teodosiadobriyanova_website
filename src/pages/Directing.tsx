@@ -50,7 +50,7 @@ export const Directing: React.FC = () => {
                 </div>
 
                 {film.still && (
-                  <div className="w-full max-w-xl aspect-[3/2] overflow-hidden bg-canvas-subtle/40">
+                  <div className="w-full max-w-[490px] aspect-[3/2] overflow-hidden rounded-[3px] bg-canvas-subtle/40">
                     <img
                       src={film.still}
                       alt={`Still from ${film.title}`}
@@ -70,7 +70,7 @@ export const Directing: React.FC = () => {
 
       {/* Interactive Installations */}
       {directingData.installations.length > 0 && (
-        <section className="space-y-3.5 pt-4">
+        <section className="space-y-3.5 pt-2">
           <h2 className="text-sm font-normal text-ink lowercase">
             <HandDrawnUnderline size="sm" variant={3}>interactive installation</HandDrawnUnderline>
           </h2>

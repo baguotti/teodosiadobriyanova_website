@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { PageWrapper } from '../components/layout/PageWrapper';
-import { HandDrawnBullet, HandDrawnUnderline } from '../components/ui/HandDrawn';
+import { HandDrawnUnderline } from '../components/ui/HandDrawn';
 import journalismData from '../data/journalism.json';
 
 interface JournalismItem {
@@ -15,23 +15,20 @@ export const Journalism: React.FC = () => {
   }, []);
 
   const renderList = (items: JournalismItem[]) => (
-    <ul className="space-y-1 max-w-4xl">
-      {items.map((item, idx) => (
-        <li key={item.title} className="flex items-start gap-3 leading-snug">
-          <HandDrawnBullet variant={idx} className="mt-[0.42rem]" />
-          <div className="text-[15px]">
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ink hover:text-earth hover:underline decoration-earth/45"
-            >
-              {item.title}
-            </a>
-            {item.outlet && (
-              <span className="italic text-ink-muted">, {item.outlet}</span>
-            )}
-          </div>
+    <ul className="list-disc pl-5 marker:text-ink-muted space-y-1 max-w-4xl">
+      {items.map((item) => (
+        <li key={item.title} className="text-[15px] leading-snug">
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink hover:text-earth hover:underline decoration-earth/45"
+          >
+            {item.title}
+          </a>
+          {item.outlet && (
+            <span className="italic text-ink-muted">, {item.outlet}</span>
+          )}
         </li>
       ))}
     </ul>
@@ -50,7 +47,7 @@ export const Journalism: React.FC = () => {
 
       <section className="space-y-3.5 pt-2">
         <h2 className="text-sm font-normal text-ink lowercase">
-          <HandDrawnUnderline size="sm" variant={3}>written features</HandDrawnUnderline>
+          <HandDrawnUnderline size="sm" variant={3}>film criticism</HandDrawnUnderline>
         </h2>
         {renderList(journalismData.writtenArticles)}
       </section>

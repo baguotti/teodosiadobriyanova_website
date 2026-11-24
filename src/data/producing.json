@@ -1,0 +1,66 @@
+{
+  "projects": [
+    {
+      "title": "Generation",
+      "category": "Short Film",
+      "link": "https://vimeo.com/750931199",
+      "credits": [
+        { "role": "Written & Directed by", "name": "Riccardo Fusetti" },
+        { "role": "Producer", "name": "Teodosia Dobriyanova" },
+        { "role": "Performance & Choreography", "name": "Evie Webzell" },
+        { "role": "Narrator", "name": "Paul Thompson" },
+        { "role": "Director of Photography", "name": "Natalja Safronova" },
+        { "role": "Focus Puller", "name": "Dominika Besińska" },
+        { "role": "Gaffer", "name": "Dorothy Dee" },
+        { "role": "Original Score & Sound Design", "name": "SINK" },
+        { "role": "Mix", "name": "Alex O'Donovan" },
+        { "role": "Colourist", "name": "Stef Colosi" },
+        { "role": "Edit & VFX", "name": "Riccardo Fusetti" },
+        { "role": "Special Thanks", "name": "Brendan Cox" },
+        { "role": "Production Company", "name": "Wild Island Films" }
+      ]
+    },
+    {
+      "title": "LISA",
+      "category": "Charity Film",
+      "link": "https://vimeo.com/549825931?fl=pl&fe=sh",
+      "credits": [
+        { "role": "Producers", "name": "Teodosia Dobriyanova & Francesca Tesler (for H&F Council)" },
+        { "role": "Animation", "name": "Alex Marbs" },
+        { "role": "Filmed by", "name": "Anna Watchman & Sabina White (St Mungo’s)" }
+      ],
+      "note": "If you are concerned about someone sleeping rough in your area, please reach out via streetlink.org or download the app.",
+      "externalLinkText": "StreetLink",
+      "externalLinkUrl": "https://www.streetlink.org"
+    },
+    {
+      "title": "Hobbie Stuart - Deliverance",
+      "category": "Music Video",
+      "link": "https://www.youtube.com/watch?v=cEEX3_c4GlU",
+      "credits": [
+        { "role": "Director", "name": "Riccardo Fusetti" },
+        { "role": "Producer", "name": "Teodosia Dobriyanova" },
+        { "role": "DoP", "name": "Brandon Lee Weston" },
+        { "role": "Production Company", "name": "Wild Island Films" },
+        { "role": "1st AC", "name": "Blerta Kambo" },
+        { "role": "2nd AC", "name": "Yinghe Lou" },
+        { "role": "Gaffer", "name": "Morgan Shaw" },
+        { "role": "Production Assistant", "name": "Brendan Cox" },
+        { "role": "Colour Grade", "name": "Guido Medici" },
+        { "role": "Makeup Artist", "name": "Elina Balint" },
+        { "role": "Extras", "name": "Lydia Tolhurst, Niall Perera & Hash Patel" }
+      ]
+    },
+    {
+      "title": "Circus of Bones - Una and the Lion",
+      "category": "Music Video",
+      "link": "https://www.youtube.com/watch?v=RIJA6Kz0-uk",
+      "credits": [
+        { "role": "Director", "name": "Riccardo Fusetti" },
+        { "role": "Producer", "name": "Teodosia Dobriyanova" },
+        { "role": "DoP", "name": "Brandon Lee Weston" },
+        { "role": "Production Company", "name": "Wild Island Films" }
+      ]
+    }
+  ]
+}

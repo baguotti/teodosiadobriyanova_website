@@ -185,7 +185,7 @@ content:
             type: string
             required: true
       - name: writtenArticles
-        label: Written Features
+        label: Film Criticism
         type: object
         list: true
         fields:
@@ -200,3 +200,50 @@ content:
             label: Link
             type: string
             required: true
+
+  - name: producing
+    label: Producing
+    type: file
+    path: src/data/producing.json
+    format: json
+    fields:
+      - name: projects
+        label: Projects
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Project Title
+            type: string
+            required: true
+          - name: category
+            label: Category (e.g. Music Video)
+            type: string
+          - name: link
+            label: Video Link
+            type: string
+          - name: description
+            label: Description (optional)
+            type: text
+          - name: credits
+            label: Credits
+            type: object
+            list: true
+            fields:
+              - name: role
+                label: Role
+                type: string
+                required: true
+              - name: name
+                label: Name
+                type: string
+                required: true
+          - name: note
+            label: Additional Note (optional)
+            type: text
+          - name: externalLinkText
+            label: Note Link Label (optional)
+            type: string
+          - name: externalLinkUrl
+            label: Note Link URL (optional)
+            type: string

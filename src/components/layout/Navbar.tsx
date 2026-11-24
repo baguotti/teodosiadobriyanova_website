@@ -9,7 +9,7 @@ export const Navbar: React.FC = () => {
     { name: 'directing', path: '/directing', variant: 0 },
     { name: 'film programming', path: '/film-programming', variant: 1 },
     { name: 'journalism', path: '/journalism', variant: 2 },
-    // { name: 'producing', path: '/producing', variant: 3 },
+    { name: 'producing', path: '/producing', variant: 3 },
     // { name: 'planet.a', path: '/planeta', variant: 0 },
   ];
 
