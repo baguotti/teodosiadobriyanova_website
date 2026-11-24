@@ -1,0 +1,202 @@
+media:
+  input: public/assets
+  output: /assets
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: about
+    label: About (Home Page)
+    type: file
+    path: src/data/about.json
+    format: json
+    fields:
+      - name: portrait
+        label: Portrait Photo
+        type: image
+      - name: bio
+        label: Short Bio
+        type: string
+        required: true
+      - name: email
+        label: Email Address
+        type: string
+        required: true
+      - name: instagramUrl
+        label: Instagram Link
+        type: string
+      - name: workLinks
+        label: Work List
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Section Name
+            type: string
+            required: true
+          - name: subtitle
+            label: Short Description
+            type: string
+          - name: link
+            label: Page Path (e.g. /directing)
+            type: string
+            required: true
+
+  - name: directing
+    label: Directing
+    type: file
+    path: src/data/directing.json
+    format: json
+    fields:
+      - name: films
+        label: Films
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: translation
+            label: English Title (optional)
+            type: string
+          - name: format
+            label: Format (e.g. Short Hybrid Documentary)
+            type: string
+          - name: status
+            label: Status (e.g. Currently in Post-production)
+            type: string
+          - name: still
+            label: Film Still Image
+            type: image
+      - name: installations
+        label: Interactive Installations
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: translation
+            label: English Title (optional)
+            type: string
+          - name: year
+            label: Year
+            type: string
+          - name: url
+            label: Main Link
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: links
+            label: Additional Links
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Link Label
+                type: string
+                required: true
+              - name: url
+                label: URL
+                type: string
+                required: true
+          - name: credits
+            label: Credits
+            type: object
+            list: true
+            fields:
+              - name: role
+                label: Role
+                type: string
+                required: true
+              - name: name
+                label: Name
+                type: string
+                required: true
+
+  - name: film-programming
+    label: Film Programming
+    type: file
+    path: src/data/film-programming.json
+    format: json
+    fields:
+      - name: seasons
+        label: Curated Seasons
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Season Title
+            type: string
+            required: true
+          - name: venue
+            label: Venue
+            type: string
+          - name: date
+            label: Date
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: link
+            label: Link
+            type: string
+      - name: festivalRoles
+        label: Festival Roles
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Festival Name
+            type: string
+            required: true
+          - name: role
+            label: Role
+            type: string
+          - name: date
+            label: Date
+            type: string
+          - name: link
+            label: Link
+            type: string
+
+  - name: journalism
+    label: Journalism
+    type: file
+    path: src/data/journalism.json
+    format: json
+    fields:
+      - name: videoReports
+        label: Video Journalism
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: outlet
+            label: Publication / Outlet
+            type: string
+          - name: url
+            label: Link
+            type: string
+            required: true
+      - name: writtenArticles
+        label: Written Features
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: outlet
+            label: Publication / Outlet
+            type: string
+          - name: url
+            label: Link
+            type: string
+            required: true

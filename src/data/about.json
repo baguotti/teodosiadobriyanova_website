@@ -1,0 +1,23 @@
+{
+  "portrait": "/assets/portrait.jpg",
+  "bio": "filmmaker, curator, and video journalist based between london and sofia.",
+  "email": "tdobriyanova@gmail.com",
+  "instagramUrl": "https://www.instagram.com/teodosiadob/",
+  "workLinks": [
+    {
+      "title": "directing",
+      "subtitle": "hybrid documentaries & interactive work",
+      "link": "/directing"
+    },
+    {
+      "title": "film programming",
+      "subtitle": "Barbican Centre & festival curatorial work",
+      "link": "/film-programming"
+    },
+    {
+      "title": "journalism",
+      "subtitle": "video reporting & published features",
+      "link": "/journalism"
+    }
+  ]
+}

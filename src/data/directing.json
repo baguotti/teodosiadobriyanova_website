@@ -1,0 +1,41 @@
+{
+  "films": [
+    {
+      "title": "Сякаш не се е случвало",
+      "translation": "Like Nothing Ever Happened",
+      "format": "Short Hybrid Documentary",
+      "status": "Currently in Post-production",
+      "still": "/assets/lneh.jpg"
+    }
+  ],
+  "installations": [
+    {
+      "title": "Това не е насилие",
+      "translation": "This Isn’t Violence",
+      "year": "2023",
+      "url": "https://www.instagram.com/tova.ne.e.nasilie/",
+      "description": "An interactive web-based installation presenting four micro stories written by women who have survived domestic abuse. Funded by the National Culture Fund of Bulgaria, in collaboration with Emprove Project.",
+      "links": [
+        {
+          "label": "@tova.ne.e.nasilie",
+          "url": "https://www.instagram.com/tova.ne.e.nasilie/"
+        },
+        {
+          "label": "DW Interview",
+          "url": "https://www.dw.com/bg/v-kuhnata-v-bara-na-ulicata-domasnoto-nasilie-v-blgaria/a-65730058"
+        }
+      ],
+      "credits": [
+        { "role": "Director", "name": "Teodosia Dobriyanova" },
+        { "role": "Producers", "name": "Georgi Marchev, Mina Kirkova" },
+        { "role": "Illustrators", "name": "Borislava Karadjova, Mihaela Karadjova" },
+        { "role": "Sound Designer", "name": "Matthew Dervenkow" },
+        { "role": "Web Developer", "name": "Donghe Hong" },
+        { "role": "Graphic Designer", "name": "Slava Aum" },
+        { "role": "Animator", "name": "Riccardo Fusetti" },
+        { "role": "Project Consultant", "name": "Olga Mineva" },
+        { "role": "Production Company", "name": "Story Films" }
+      ]
+    }
+  ]
+}
